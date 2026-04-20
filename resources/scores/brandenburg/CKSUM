@@ -1,0 +1,45 @@
+CHEKSUMS for files from /musedata/bach/brandenburg
+at https://kern.humdrum.org
+downloaded on Tue Oct 14 12:28:48 PDT 2025
+A current version of these files may be downloaded using the address:
+	https://kern.humdrum.org/data?f=zip&l=/musedata/bach/brandenburg
+==================================================================
+
+The following lines list the checksum values for all score
+files in this downloaded zip archive.
+
+A "checksum" value is an error-checking mechanism that may
+assist in determining whether a file has been modified or data
+garbled due to transmission or faulty storage.  The "checksum A"
+value uses the POSIX 2 checksum algorithm.  The "checksum B" value
+uses the CCITT cyclic redundancy check algorithm.
+
+Note that checksum commands will differ for ASCII files formatted
+in DOS/Windows style or Unix/Macintosh formatted text.  The files in
+this ZIP archive were in Unix/Macintosh line formatting style when the
+checksums were compiled.
+
+checksum A   checksum B    filename
+===================================================================
+
+3420982427 76473 bwv1046a.krn
+1964257058 21102 bwv1046b.krn
+4037537229 85917 bwv1046c.krn
+988092643 11368 bwv1046d.krn
+1999450701 3314 bwv1046e.krn
+3071131849 7148 bwv1046f.krn
+3774626757 3773 bwv1046g.krn
+4173892762 88447 bwv1047a.krn
+2367816230 12224 bwv1047b.krn
+3420542744 47725 bwv1047c.krn
+2232124336 96653 bwv1048a.krn
+3797249816 52981 bwv1048b.krn
+2791586027 109881 bwv1049a.krn
+1401433819 19653 bwv1049b.krn
+4203082970 69340 bwv1049c.krn
+3782051387 136347 bwv1050a.krn
+2734662502 14748 bwv1050b.krn
+1141791561 87949 bwv1050c.krn
+1228037569 65634 bwv1051a.krn
+2509752945 17710 bwv1051b.krn
+1718665473 55747 bwv1051c.krn

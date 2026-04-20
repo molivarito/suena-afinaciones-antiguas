@@ -1,0 +1,1821 @@
+{
+ "Corales de Bach": [
+  {
+   "file": "chor006.krn",
+   "title": "Christus, der ist mein Leben (BWV 281)",
+   "path": "Corales de Bach/chor006.krn"
+  },
+  {
+   "file": "chor007.krn",
+   "title": "Nun lob, mein Seel, den Herren (BWV 17/7)",
+   "path": "Corales de Bach/chor007.krn"
+  },
+  {
+   "file": "chor008.krn",
+   "title": "Freuet euch, ihr Christen alle (BWV 40/8)",
+   "path": "Corales de Bach/chor008.krn"
+  },
+  {
+   "file": "chor009.krn",
+   "title": "Ermuntre dich, mein schwacher Geist (BWV 248/12)",
+   "path": "Corales de Bach/chor009.krn"
+  },
+  {
+   "file": "chor010.krn",
+   "title": "Aus tiefer Not schrei ich zu dir (BWV 38/6)",
+   "path": "Corales de Bach/chor010.krn"
+  },
+  {
+   "file": "chor011.krn",
+   "title": "Jesu, nun sei gepreiset (BWV 41/6 & 171/6)",
+   "path": "Corales de Bach/chor011.krn"
+  },
+  {
+   "file": "chor014.krn",
+   "title": "O Herre Gott, dein g&ouml;ttlich Wort (BWV 185/5)",
+   "path": "Corales de Bach/chor014.krn"
+  },
+  {
+   "file": "chor015.krn",
+   "title": "Christ lag in Todesbanden (BWV 277)",
+   "path": "Corales de Bach/chor015.krn"
+  },
+  {
+   "file": "chor016.krn",
+   "title": "Es woll' uns Gott gen&auml;dig sein (BWV 311)",
+   "path": "Corales de Bach/chor016.krn"
+  },
+  {
+   "file": "chor017.krn",
+   "title": "Erschienen ist der herrliche Tag (BWV 145/5)",
+   "path": "Corales de Bach/chor017.krn"
+  },
+  {
+   "file": "chor018.krn",
+   "title": "Gottes Sohn ist kommen (BWV 318)",
+   "path": "Corales de Bach/chor018.krn"
+  },
+  {
+   "file": "chor019.krn",
+   "title": "Ich hab mein Sach Gott heimgestellt (BWV 351)",
+   "path": "Corales de Bach/chor019.krn"
+  },
+  {
+   "file": "chor020.krn",
+   "title": "Ein feste Burg ist unser Gott (BWV 302)",
+   "path": "Corales de Bach/chor020.krn"
+  },
+  {
+   "file": "chor021.krn",
+   "title": "Herzlich tut mich verlangen (BWV 153/5)",
+   "path": "Corales de Bach/chor021.krn"
+  },
+  {
+   "file": "chor022.krn",
+   "title": "Schm&uuml;cke dich, o liebe Seele (BWV 180/7)",
+   "path": "Corales de Bach/chor022.krn"
+  },
+  {
+   "file": "chor023.krn",
+   "title": "Zeuch ein zu deinen Toren (BWV 28/6)",
+   "path": "Corales de Bach/chor023.krn"
+  },
+  {
+   "file": "chor024.krn",
+   "title": "Valet will ich dir geben (BWV 415)",
+   "path": "Corales de Bach/chor024.krn"
+  },
+  {
+   "file": "chor025.krn",
+   "title": "Wo soll ich fliehen hin (BWV 148/6)",
+   "path": "Corales de Bach/chor025.krn"
+  },
+  {
+   "file": "chor026.krn",
+   "title": "O Ewigkeit, du Donnerwort (BWV 20/7,11)",
+   "path": "Corales de Bach/chor026.krn"
+  },
+  {
+   "file": "chor027.krn",
+   "title": "Es spricht der Unweisen Mund (BWV 308)",
+   "path": "Corales de Bach/chor027.krn"
+  },
+  {
+   "file": "chor028.krn",
+   "title": "Nun komm, der Heiden Heiland (BWV 36(2)/8)",
+   "path": "Corales de Bach/chor028.krn"
+  },
+  {
+   "file": "chor029.krn",
+   "title": "Freu dich sehr, o meine Seele (BWV 32/6)",
+   "path": "Corales de Bach/chor029.krn"
+  },
+  {
+   "file": "chor030.krn",
+   "title": "Jesus Christus, unser Heiland (BWV 363)",
+   "path": "Corales de Bach/chor030.krn"
+  },
+  {
+   "file": "chor031.krn",
+   "title": "Ach lieben Christen, seid getrost (BWV 256)",
+   "path": "Corales de Bach/chor031.krn"
+  },
+  {
+   "file": "chor032.krn",
+   "title": "Nun danket alle Gott (BWV 386)",
+   "path": "Corales de Bach/chor032.krn"
+  },
+  {
+   "file": "chor033.krn",
+   "title": "Herr, ich habe mi&szlig;gehandelt (BWV 330)",
+   "path": "Corales de Bach/chor033.krn"
+  },
+  {
+   "file": "chor034.krn",
+   "title": "Erbarm dich mein, o Herre Gott (BWV 305)",
+   "path": "Corales de Bach/chor034.krn"
+  },
+  {
+   "file": "chor035.krn",
+   "title": "Gott des Himmels und der Erden (BWV 248/53)",
+   "path": "Corales de Bach/chor035.krn"
+  },
+  {
+   "file": "chor036.krn",
+   "title": "Nun bitten wir den heiligen Geist (BWV 385)",
+   "path": "Corales de Bach/chor036.krn"
+  },
+  {
+   "file": "chor037.krn",
+   "title": "Jesu, der du meine Seele (BWV 352)",
+   "path": "Corales de Bach/chor037.krn"
+  },
+  {
+   "file": "chor038.krn",
+   "title": "Straf mich nicht in deinem Zorn (BWV 115/6)",
+   "path": "Corales de Bach/chor038.krn"
+  },
+  {
+   "file": "chor039.krn",
+   "title": "Ach, was soll ich S&uuml;nder machen? (BWV 259)",
+   "path": "Corales de Bach/chor039.krn"
+  },
+  {
+   "file": "chor040.krn",
+   "title": "Ach Gott und Herr (BWV 255)",
+   "path": "Corales de Bach/chor040.krn"
+  },
+  {
+   "file": "chor041.krn",
+   "title": "Was mein Gott will, das g'scheh allzeit (BWV 65/7)",
+   "path": "Corales de Bach/chor041.krn"
+  },
+  {
+   "file": "chor042.krn",
+   "title": "Du Friedef&uuml;rst, Herr Jesu Christ (BWV 67/7)",
+   "path": "Corales de Bach/chor042.krn"
+  },
+  {
+   "file": "chor043.krn",
+   "title": "Liebester Gott, wann werd ich sterben (BWV 8/6)",
+   "path": "Corales de Bach/chor043.krn"
+  },
+  {
+   "file": "chor044.krn",
+   "title": "Mach's mit mir, Gott, nach deiner G&uuml;t (BWV 377)",
+   "path": "Corales de Bach/chor044.krn"
+  },
+  {
+   "file": "chor045.krn",
+   "title": "Kommt her zu mir, spricht (BWV 108/6)",
+   "path": "Corales de Bach/chor045.krn"
+  },
+  {
+   "file": "chor046.krn",
+   "title": "Vom Himmel hoch, da komm ich her (BWV 248/9)",
+   "path": "Corales de Bach/chor046.krn"
+  },
+  {
+   "file": "chor047.krn",
+   "title": "Vater unser im Himmelreich (BWV 245/5 & 416)",
+   "path": "Corales de Bach/chor047.krn"
+  },
+  {
+   "file": "chor048.krn",
+   "title": "Oh how fleeting, oh how fading (BWV 26/6)",
+   "path": "Corales de Bach/chor048.krn"
+  },
+  {
+   "file": "chor049.krn",
+   "title": "Mit Fried' und Freud' fahr' ich dahin (BWV 382)",
+   "path": "Corales de Bach/chor049.krn"
+  },
+  {
+   "file": "chor050.krn",
+   "title": "In allen meinen Taten (BWV 244/37)",
+   "path": "Corales de Bach/chor050.krn"
+  },
+  {
+   "file": "chor051.krn",
+   "title": "Gelobet seist du, Jesu Christ (BWV 91/6)",
+   "path": "Corales de Bach/chor051.krn"
+  },
+  {
+   "file": "chor052.krn",
+   "title": "Wenn mein St&uuml;ndlein vorhanden ist (BWV 429)",
+   "path": "Corales de Bach/chor052.krn"
+  },
+  {
+   "file": "chor053.krn",
+   "title": "Das neugeborne Kindelein (BWV 122/6)",
+   "path": "Corales de Bach/chor053.krn"
+  },
+  {
+   "file": "chor054.krn",
+   "title": "Lobt Gott, ihr Christen allzugleich (BWV 151/5)",
+   "path": "Corales de Bach/chor054.krn"
+  },
+  {
+   "file": "chor055.krn",
+   "title": "Wir Christenleut (BWV 110/7)",
+   "path": "Corales de Bach/chor055.krn"
+  },
+  {
+   "file": "chor056.krn",
+   "title": "Christum wir sollen loben schon (BWV 121/6)",
+   "path": "Corales de Bach/chor056.krn"
+  },
+  {
+   "file": "chor057.krn",
+   "title": "O Traurigkeit, o Herzeleid (BWV 404)",
+   "path": "Corales de Bach/chor057.krn"
+  },
+  {
+   "file": "chor058.krn",
+   "title": "Herzlich lieb hab ich dich, o Herr (BWV 174/5)",
+   "path": "Corales de Bach/chor058.krn"
+  },
+  {
+   "file": "chor059.krn",
+   "title": "Herzliebster Jesu, was hast du verbrochen (BWV 245/3)",
+   "path": "Corales de Bach/chor059.krn"
+  },
+  {
+   "file": "chor060.krn",
+   "title": "Ich freue mich in dir (BWV 133/6)",
+   "path": "Corales de Bach/chor060.krn"
+  },
+  {
+   "file": "chor061.krn",
+   "title": "Jesu Leiden, Pein und Tod (BWV 159/5)",
+   "path": "Corales de Bach/chor061.krn"
+  },
+  {
+   "file": "chor062.krn",
+   "title": "Wer nur den lieben Gott l&auml;&szlig;t walten (BWV 197/10)",
+   "path": "Corales de Bach/chor062.krn"
+  },
+  {
+   "file": "chor063.krn",
+   "title": "Nun ruhen alle W&auml;lder (BWV 245/11)",
+   "path": "Corales de Bach/chor063.krn"
+  },
+  {
+   "file": "chor064.krn",
+   "title": "Freu dich sehr, o meine Seele (BWV 194/6)",
+   "path": "Corales de Bach/chor064.krn"
+  },
+  {
+   "file": "chor065.krn",
+   "title": "Was Gott tut, das ist wohlgetan (BWV 144/3)",
+   "path": "Corales de Bach/chor065.krn"
+  },
+  {
+   "file": "chor066.krn",
+   "title": "Christ, unser Herr zum Jordan kam (BWV 280)",
+   "path": "Corales de Bach/chor066.krn"
+  },
+  {
+   "file": "chor067.krn",
+   "title": "Freu dich sehr, o meine Seele (BWV 39/7)",
+   "path": "Corales de Bach/chor067.krn"
+  },
+  {
+   "file": "chor068.krn",
+   "title": "Wenn wir in h&ouml;chsten N&ouml;ten sein (BWV 431)",
+   "path": "Corales de Bach/chor068.krn"
+  },
+  {
+   "file": "chor069.krn",
+   "title": "Komm, heiliger Geist, Herre Gott (BWV 226)",
+   "path": "Corales de Bach/chor069.krn"
+  },
+  {
+   "file": "chor070.krn",
+   "title": "Gott sei gelobet und gebenedeiet (BWV 322)",
+   "path": "Corales de Bach/chor070.krn"
+  },
+  {
+   "file": "chor071.krn",
+   "title": "Ich ruf zu dir, Herr Jesu Christ (BWV 177/5)",
+   "path": "Corales de Bach/chor071.krn"
+  },
+  {
+   "file": "chor072.krn",
+   "title": "Erhalt uns, Herr, bei deinem Wort (BWV 6/6)",
+   "path": "Corales de Bach/chor072.krn"
+  },
+  {
+   "file": "chor073.krn",
+   "title": "Herr Jesu Christ, ich schrei zu dir (BWV 334)",
+   "path": "Corales de Bach/chor073.krn"
+  },
+  {
+   "file": "chor074.krn",
+   "title": "O Haupt voll Blut und Wunden (BWV 244/54)",
+   "path": "Corales de Bach/chor074.krn"
+  },
+  {
+   "file": "chor075.krn",
+   "title": "Das walt mein Gott (BWV 291)",
+   "path": "Corales de Bach/chor075.krn"
+  },
+  {
+   "file": "chor076.krn",
+   "title": "Freu dich sehr, o meine Seele (BWV 30/6)",
+   "path": "Corales de Bach/chor076.krn"
+  },
+  {
+   "file": "chor077.krn",
+   "title": "In dich hab ich gehoffet, Herr (BWV 248/46)",
+   "path": "Corales de Bach/chor077.krn"
+  },
+  {
+   "file": "chor078.krn",
+   "title": "Herzliebester Jesu, was hast du verbrochen (BWV 244/3)",
+   "path": "Corales de Bach/chor078.krn"
+  },
+  {
+   "file": "chor079.krn",
+   "title": "Heut triumphieret Gottes Sohn (BWV 342)",
+   "path": "Corales de Bach/chor079.krn"
+  },
+  {
+   "file": "chor080.krn",
+   "title": "O Haupt voll Blut und Wunden (BWV 244/44)",
+   "path": "Corales de Bach/chor080.krn"
+  },
+  {
+   "file": "chor081.krn",
+   "title": "Christus, der uns delig macht (BWV 245/15)",
+   "path": "Corales de Bach/chor081.krn"
+  },
+  {
+   "file": "chor082.krn",
+   "title": "O gro&szlig;er Gott von Macht (BWV 46/6)",
+   "path": "Corales de Bach/chor082.krn"
+  },
+  {
+   "file": "chor083.krn",
+   "title": "Jesu Leiden, Pein und Tod (BWV 245/14)",
+   "path": "Corales de Bach/chor083.krn"
+  },
+  {
+   "file": "chor084.krn",
+   "title": "Nun bitten wir den heiligen Geist (BWV 197/5)",
+   "path": "Corales de Bach/chor084.krn"
+  },
+  {
+   "file": "chor085.krn",
+   "title": "O Gott, du frommer Gott (BWV 45/7)",
+   "path": "Corales de Bach/chor085.krn"
+  },
+  {
+   "file": "chor086.krn",
+   "title": "Wie sch&ouml;n leuchtet der Morgenstern (BWV 36(1) & 36(2)/4)",
+   "path": "Corales de Bach/chor086.krn"
+  },
+  {
+   "file": "chor087.krn",
+   "title": "Du, o sch&ouml;nes Weltgeb&auml;ude (BWV 56/5)",
+   "path": "Corales de Bach/chor087.krn"
+  },
+  {
+   "file": "chor088.krn",
+   "title": "Helft mir Gotts G&uuml;te preisen (BWV 28/6)",
+   "path": "Corales de Bach/chor088.krn"
+  },
+  {
+   "file": "chor089.krn",
+   "title": "O Haupt voll Blut und Wunden (BWV 244/62)",
+   "path": "Corales de Bach/chor089.krn"
+  },
+  {
+   "file": "chor090.krn",
+   "title": "Hast du denn, Jesu, dein Angesicht (BWV 57/8)",
+   "path": "Corales de Bach/chor090.krn"
+  },
+  {
+   "file": "chor091.krn",
+   "title": "Verleih uns Frieden gn&auml;diglich (BWV 42/7)",
+   "path": "Corales de Bach/chor091.krn"
+  },
+  {
+   "file": "chor092.krn",
+   "title": "Herr Jesu Christ, du h&ouml;chstes Gut (BWV 168/6)",
+   "path": "Corales de Bach/chor092.krn"
+  },
+  {
+   "file": "chor093.krn",
+   "title": "Wach auf, mein Herz (BWV 194/12)",
+   "path": "Corales de Bach/chor093.krn"
+  },
+  {
+   "file": "chor094.krn",
+   "title": "Warum betr&uuml;bst du dich, mein Herz (BWV 47/5)",
+   "path": "Corales de Bach/chor094.krn"
+  },
+  {
+   "file": "chor095.krn",
+   "title": "Werde munter, mein Gem&uuml;te (BWV 55/5)",
+   "path": "Corales de Bach/chor095.krn"
+  },
+  {
+   "file": "chor096.krn",
+   "title": "Jesu, meine Freude (BWV 87/7)",
+   "path": "Corales de Bach/chor096.krn"
+  },
+  {
+   "file": "chor097.krn",
+   "title": "Nun bitten wir den heiligen Geist (BWV 169/7)",
+   "path": "Corales de Bach/chor097.krn"
+  },
+  {
+   "file": "chor098.krn",
+   "title": "O Haupt voll Blut und Wunden (BWV 244/15,17)",
+   "path": "Corales de Bach/chor098.krn"
+  },
+  {
+   "file": "chor099.krn",
+   "title": "Helft mir Gotts G&uuml;te preisen (BWV 16/6)",
+   "path": "Corales de Bach/chor099.krn"
+  },
+  {
+   "file": "chor100.krn",
+   "title": "Durch Adams Fall ist ganz verderbt (BWV 18/5)",
+   "path": "Corales de Bach/chor100.krn"
+  },
+  {
+   "file": "chor101.krn",
+   "title": "Herr Christ, der ein'ge Gottes Sohn (BWV 164/6)",
+   "path": "Corales de Bach/chor101.krn"
+  },
+  {
+   "file": "chor102.krn",
+   "title": "Du lebensf&uuml;rst, Herr Jesu Christ (BWV 43/11)",
+   "path": "Corales de Bach/chor102.krn"
+  },
+  {
+   "file": "chor103.krn",
+   "title": "Nun ruhen alle W&auml;lder (BWV 13/6)",
+   "path": "Corales de Bach/chor103.krn"
+  },
+  {
+   "file": "chor104.krn",
+   "title": "Wer nur den lieben Gott l&auml;&szlig;t walten (BWV 88/7)",
+   "path": "Corales de Bach/chor104.krn"
+  },
+  {
+   "file": "chor105.krn",
+   "title": "Herzliebester Jesu, was hast du verbrochen (BWV 244/46)",
+   "path": "Corales de Bach/chor105.krn"
+  },
+  {
+   "file": "chor106.krn",
+   "title": "Jesu Leiden, Pein und Tod (BWV 245/28)",
+   "path": "Corales de Bach/chor106.krn"
+  },
+  {
+   "file": "chor107.krn",
+   "title": "Herzlich lieb hab ich dich, o Herr (BWV 245/40)",
+   "path": "Corales de Bach/chor107.krn"
+  },
+  {
+   "file": "chor108.krn",
+   "title": "Valet will ich dir geben (BWV 245/26)",
+   "path": "Corales de Bach/chor108.krn"
+  },
+  {
+   "file": "chor109.krn",
+   "title": "Singen wir aus Herzensgrund (BWV 187/7)",
+   "path": "Corales de Bach/chor109.krn"
+  },
+  {
+   "file": "chor110.krn",
+   "title": "Vater unser im Himmelreich (BWV 102/7)",
+   "path": "Corales de Bach/chor110.krn"
+  },
+  {
+   "file": "chor111.krn",
+   "title": "Herzliebester Jesu, was hast du verbrochen (BWV 245/17)",
+   "path": "Corales de Bach/chor111.krn"
+  },
+  {
+   "file": "chor112.krn",
+   "title": "Wer nur den lieben Gott l&auml;&szlig;t walten (BWV 84/5)",
+   "path": "Corales de Bach/chor112.krn"
+  },
+  {
+   "file": "chor113.krn",
+   "title": "Christus, der uns selig macht (BWV 245/37)",
+   "path": "Corales de Bach/chor113.krn"
+  },
+  {
+   "file": "chor114.krn",
+   "title": "Von Gott will ich nicht lassen (BWV 419)",
+   "path": "Corales de Bach/chor114.krn"
+  },
+  {
+   "file": "chor115.krn",
+   "title": "Was mein Gott will, das g'scheh allzeit (BWV 244/25)",
+   "path": "Corales de Bach/chor115.krn"
+  },
+  {
+   "file": "chor116.krn",
+   "title": "Nun lob, mein Seel, den Herren (BWV 29/8)",
+   "path": "Corales de Bach/chor116.krn"
+  },
+  {
+   "file": "chor117.krn",
+   "title": "Nun ruhen alle W&auml;lder (BWV 244/10)",
+   "path": "Corales de Bach/chor117.krn"
+  },
+  {
+   "file": "chor118.krn",
+   "title": "In dich hab ich gehoffet, Herr (BWV 244/32)",
+   "path": "Corales de Bach/chor118.krn"
+  },
+  {
+   "file": "chor119.krn",
+   "title": "Christ, unser Herr zum Jordan kam (BWV 176/6)",
+   "path": "Corales de Bach/chor119.krn"
+  },
+  {
+   "file": "chor120.krn",
+   "title": "Was mein Gott will, das g'scheh allzeit (BWV 103/6)",
+   "path": "Corales de Bach/chor120.krn"
+  },
+  {
+   "file": "chor121.krn",
+   "title": "Werde munter, mein Gem&uuml;te (BWV 244/40)",
+   "path": "Corales de Bach/chor121.krn"
+  },
+  {
+   "file": "chor122.krn",
+   "title": "Ist Gott mein Schild und Helfersmann (BWV 85/6)",
+   "path": "Corales de Bach/chor122.krn"
+  },
+  {
+   "file": "chor123.krn",
+   "title": "Helft mir Gotts G&uuml;te preisen (BWV 183/5)",
+   "path": "Corales de Bach/chor123.krn"
+  },
+  {
+   "file": "chor124.krn",
+   "title": "Auf, auf, mein Herz, und du mein ganzer Sinn (BWV 268)",
+   "path": "Corales de Bach/chor124.krn"
+  },
+  {
+   "file": "chor125.krn",
+   "title": "Allein Gott in der H&ouml;h sei Ehr (BWV 104/6)",
+   "path": "Corales de Bach/chor125.krn"
+  },
+  {
+   "file": "chor126.krn",
+   "title": "Durch Adams Fall ist ganz verderbt (BWV 18/5)",
+   "path": "Corales de Bach/chor126.krn"
+  },
+  {
+   "file": "chor127.krn",
+   "title": "Dies sind die heil'gen zehn Gebot (BWV 298)",
+   "path": "Corales de Bach/chor127.krn"
+  },
+  {
+   "file": "chor128.krn",
+   "title": "Alles ist an Gottes Segen (BWV 263)",
+   "path": "Corales de Bach/chor128.krn"
+  },
+  {
+   "file": "chor129.krn",
+   "title": "Keinen hat Gott verlassen (BWV 369)",
+   "path": "Corales de Bach/chor129.krn"
+  },
+  {
+   "file": "chor130.krn",
+   "title": "Mein Seele erhebet den Herrn (BWV 324)",
+   "path": "Corales de Bach/chor130.krn"
+  },
+  {
+   "file": "chor131.krn",
+   "title": "Liebester Jesu, wir sind hier (BWV 373)",
+   "path": "Corales de Bach/chor131.krn"
+  },
+  {
+   "file": "chor132.krn",
+   "title": "Kyrie! Gott Vater in Ewigkeit (BWV 371)",
+   "path": "Corales de Bach/chor132.krn"
+  },
+  {
+   "file": "chor133.krn",
+   "title": "Wir glauben all an einen Gott (BWV 437)",
+   "path": "Corales de Bach/chor133.krn"
+  },
+  {
+   "file": "chor134.krn",
+   "title": "Du, o sch&ouml;nes Weltgeb&auml;ude (BWV 301)",
+   "path": "Corales de Bach/chor134.krn"
+  },
+  {
+   "file": "chor135.krn",
+   "title": "Gott der Vater wohn uns bei (BWV 317)",
+   "path": "Corales de Bach/chor135.krn"
+  },
+  {
+   "file": "chor136.krn",
+   "title": "Herr Jesu Christ, dich zu uns wend (BWV 332)",
+   "path": "Corales de Bach/chor136.krn"
+  },
+  {
+   "file": "chor137.krn",
+   "title": "Wer Gott vertraut, hat wohl gebaut (BWV 433)",
+   "path": "Corales de Bach/chor137.krn"
+  },
+  {
+   "file": "chor138.krn",
+   "title": "Jesu, meine Freude (BWV 64/8)",
+   "path": "Corales de Bach/chor138.krn"
+  },
+  {
+   "file": "chor139.krn",
+   "title": "Warum sollt ich mich denn gr&auml;men (BWV 248/33)",
+   "path": "Corales de Bach/chor139.krn"
+  },
+  {
+   "file": "chor140.krn",
+   "title": "In allen meinen Taten (BWV 367)",
+   "path": "Corales de Bach/chor140.krn"
+  },
+  {
+   "file": "chor141.krn",
+   "title": "Seelenbr&auml;utigam (BWV 409)",
+   "path": "Corales de Bach/chor141.krn"
+  },
+  {
+   "file": "chor142.krn",
+   "title": "Schwing dich auf zu deinem Gott (BWV 40/6)",
+   "path": "Corales de Bach/chor142.krn"
+  },
+  {
+   "file": "chor143.krn",
+   "title": "In dulci jubilo (BWV 368)",
+   "path": "Corales de Bach/chor143.krn"
+  },
+  {
+   "file": "chor144.krn",
+   "title": "Wer in dem Schutz des H&ouml;chsten ist (BWV 339)",
+   "path": "Corales de Bach/chor144.krn"
+  },
+  {
+   "file": "chor145.krn",
+   "title": "Warum betr&uuml;bst du dich, mein Herz (BWV 420)",
+   "path": "Corales de Bach/chor145.krn"
+  },
+  {
+   "file": "chor146.krn",
+   "title": "Wer nur den lieben Gott la&szlig;t walten (BWV 434)",
+   "path": "Corales de Bach/chor146.krn"
+  },
+  {
+   "file": "chor147.krn",
+   "title": "Wenn ich in Angst und Not (BWV 427)",
+   "path": "Corales de Bach/chor147.krn"
+  },
+  {
+   "file": "chor148.krn",
+   "title": "Uns ist ein Kindlein heut geborn (BWV 414)",
+   "path": "Corales de Bach/chor148.krn"
+  },
+  {
+   "file": "chor149.krn",
+   "title": "Nicht so traurig, nicht so sehr (BWV 384)",
+   "path": "Corales de Bach/chor149.krn"
+  },
+  {
+   "file": "chor151.krn",
+   "title": "Meinen Jesum la&szlig; ich nicht, Jesus (BWV 379)",
+   "path": "Corales de Bach/chor151.krn"
+  },
+  {
+   "file": "chor152.krn",
+   "title": "Meinen Jesum la&szlig; ich nicht, weil (BWV 154/8)",
+   "path": "Corales de Bach/chor152.krn"
+  },
+  {
+   "file": "chor153.krn",
+   "title": "Alle Menschen m&uuml;ssen sterben (BWV 262)",
+   "path": "Corales de Bach/chor153.krn"
+  },
+  {
+   "file": "chor154.krn",
+   "title": "Der du bist drei in Einigkeit (BWV 293)",
+   "path": "Corales de Bach/chor154.krn"
+  },
+  {
+   "file": "chor155.krn",
+   "title": "Hilf, Herr Jesu, la&szlig; gelingen (BWV 344)",
+   "path": "Corales de Bach/chor155.krn"
+  },
+  {
+   "file": "chor156.krn",
+   "title": "Oh God, how many heart pains (BWV 3/6)",
+   "path": "Corales de Bach/chor156.krn"
+  },
+  {
+   "file": "chor157.krn",
+   "title": "Wo Gott zum Haus nicht gibt sein' Gunst (BWV 438)",
+   "path": "Corales de Bach/chor157.krn"
+  },
+  {
+   "file": "chor158.krn",
+   "title": "Der Tag, der ist so freudenreich (BWV 294)",
+   "path": "Corales de Bach/chor158.krn"
+  },
+  {
+   "file": "chor159.krn",
+   "title": "Als der g&uuml;tige Gott (BWV 264)",
+   "path": "Corales de Bach/chor159.krn"
+  },
+  {
+   "file": "chor160.krn",
+   "title": "Gelobet seist du, Jesu Christ (BWV 64/2)",
+   "path": "Corales de Bach/chor160.krn"
+  },
+  {
+   "file": "chor161.krn",
+   "title": "Ihr Gestirn, ihr hohen L&uuml;fte (BWV 366)",
+   "path": "Corales de Bach/chor161.krn"
+  },
+  {
+   "file": "chor162.krn",
+   "title": "Das alte Jahr vergangen ist (BWV 288)",
+   "path": "Corales de Bach/chor162.krn"
+  },
+  {
+   "file": "chor163.krn",
+   "title": "F&uuml;r Freuden la&szlig;t uns springen (BWV 313)",
+   "path": "Corales de Bach/chor163.krn"
+  },
+  {
+   "file": "chor164.krn",
+   "title": "Herr Gott, dich loben alle wir (BWV 326)",
+   "path": "Corales de Bach/chor164.krn"
+  },
+  {
+   "file": "chor165.krn",
+   "title": "O Lamm Gottes, unschuldig (BWV 401)",
+   "path": "Corales de Bach/chor165.krn"
+  },
+  {
+   "file": "chor166.krn",
+   "title": "Es stehn vor Gottes Throne (BWV 309)",
+   "path": "Corales de Bach/chor166.krn"
+  },
+  {
+   "file": "chor167.krn",
+   "title": "Du gro&szlig;er Schmerzensmann (BWV 300)",
+   "path": "Corales de Bach/chor167.krn"
+  },
+  {
+   "file": "chor168.krn",
+   "title": "Heut ist, o Mensch, ein gro&szlig;er Trauertag (BWV 341)",
+   "path": "Corales de Bach/chor168.krn"
+  },
+  {
+   "file": "chor169.krn",
+   "title": "Jesu, der du selbsten wohl (BWV 355)",
+   "path": "Corales de Bach/chor169.krn"
+  },
+  {
+   "file": "chor170.krn",
+   "title": "Nun komm, der Heiden Heiland (BWV 62/6)",
+   "path": "Corales de Bach/chor170.krn"
+  },
+  {
+   "file": "chor171.krn",
+   "title": "Schaut, ihr S&uuml;nder (BWV 408)",
+   "path": "Corales de Bach/chor171.krn"
+  },
+  {
+   "file": "chor172.krn",
+   "title": "Sei gegr&uuml;&szlig;et, Jesu g&uuml;tig (BWV 410)",
+   "path": "Corales de Bach/chor172.krn"
+  },
+  {
+   "file": "chor173.krn",
+   "title": "O Herzensangst, o Bangigkeit (BWV 400)",
+   "path": "Corales de Bach/chor173.krn"
+  },
+  {
+   "file": "chor174.krn",
+   "title": "Jesus Christus, unser Heiland (BWV 364)",
+   "path": "Corales de Bach/chor174.krn"
+  },
+  {
+   "file": "chor175.krn",
+   "title": "Jesus, meine Zuversicht (BWV 365)",
+   "path": "Corales de Bach/chor175.krn"
+  },
+  {
+   "file": "chor176.krn",
+   "title": "Erstanden ist der heil'ge Christ (BWV 306)",
+   "path": "Corales de Bach/chor176.krn"
+  },
+  {
+   "file": "chor177.krn",
+   "title": "Ach bleib bei uns, Herr Jesu Christ (BWV 253)",
+   "path": "Corales de Bach/chor177.krn"
+  },
+  {
+   "file": "chor178.krn",
+   "title": "Das neugeborne Kindelein (BWV 122)",
+   "path": "Corales de Bach/chor178.krn"
+  },
+  {
+   "file": "chor179.krn",
+   "title": "Wachet auf, ruft uns die Stimme (BWV 140/7)",
+   "path": "Corales de Bach/chor179.krn"
+  },
+  {
+   "file": "chor180.krn",
+   "title": "Als Jesus Christus in der Nacht (BWV 265)",
+   "path": "Corales de Bach/chor180.krn"
+  },
+  {
+   "file": "chor181.krn",
+   "title": "Gott hat das Evangelium (BWV 319)",
+   "path": "Corales de Bach/chor181.krn"
+  },
+  {
+   "file": "chor182.krn",
+   "title": "W&auml;r Gott nicht mit uns diese Zeit (BWV 14/5)",
+   "path": "Corales de Bach/chor182.krn"
+  },
+  {
+   "file": "chor183.krn",
+   "title": "Nun freut euch, lieben Christen g'mein (BWV 388)",
+   "path": "Corales de Bach/chor183.krn"
+  },
+  {
+   "file": "chor184.krn",
+   "title": "Christ lag in Todesbanden (BWV 4/8)",
+   "path": "Corales de Bach/chor184.krn"
+  },
+  {
+   "file": "chor185.krn",
+   "title": "Nun freut euch, Gottes Kinder all (BWV 387)",
+   "path": "Corales de Bach/chor185.krn"
+  },
+  {
+   "file": "chor186.krn",
+   "title": "Ach Gott, erh&ouml;r mein Seufzen (BWV 254)",
+   "path": "Corales de Bach/chor186.krn"
+  },
+  {
+   "file": "chor187.krn",
+   "title": "Komm, Gott Sch&ouml;pfer, heiliger Geist (BWV 370)",
+   "path": "Corales de Bach/chor187.krn"
+  },
+  {
+   "file": "chor188.krn",
+   "title": "Ich dank dir schon durch deinen Sohn (BWV 349)",
+   "path": "Corales de Bach/chor188.krn"
+  },
+  {
+   "file": "chor189.krn",
+   "title": "Herr Jesu Christ, wahr Mensch und Gott (BWV 336)",
+   "path": "Corales de Bach/chor189.krn"
+  },
+  {
+   "file": "chor190.krn",
+   "title": "Herr, nun la&szlig; in Friede (BWV 337)",
+   "path": "Corales de Bach/chor190.krn"
+  },
+  {
+   "file": "chor191.krn",
+   "title": "Von Gott will ich nicht lassen (BWV 73/5)",
+   "path": "Corales de Bach/chor191.krn"
+  },
+  {
+   "file": "chor192.krn",
+   "title": "Gottlob, es geht nunmehr zu Ende (BWV 321)",
+   "path": "Corales de Bach/chor192.krn"
+  },
+  {
+   "file": "chor193.krn",
+   "title": "Was bist du doch, o Seele, so betr&uuml;bet (BWV 424)",
+   "path": "Corales de Bach/chor193.krn"
+  },
+  {
+   "file": "chor194.krn",
+   "title": "Liebster Immanuel, Herzog der Frommen (BWV 123/16)",
+   "path": "Corales de Bach/chor194.krn"
+  },
+  {
+   "file": "chor195.krn",
+   "title": "Wie sch&ouml;n leuchtet der Morgenstern (BWV 36(1)/5 & 36(2)/4)",
+   "path": "Corales de Bach/chor195.krn"
+  },
+  {
+   "file": "chor196.krn",
+   "title": "Da der Herr Christ zu Tische sa&szlig; (BWV 285)",
+   "path": "Corales de Bach/chor196.krn"
+  },
+  {
+   "file": "chor197.krn",
+   "title": "Christ ist erstanden (BWV 276)",
+   "path": "Corales de Bach/chor197.krn"
+  },
+  {
+   "file": "chor198.krn",
+   "title": "Christus, der uns selig macht (BWV 283)",
+   "path": "Corales de Bach/chor198.krn"
+  },
+  {
+   "file": "chor199.krn",
+   "title": "Hilf, Gott, la&szlig; mir's gelingen (BWV 343)",
+   "path": "Corales de Bach/chor199.krn"
+  },
+  {
+   "file": "chor200.krn",
+   "title": "Christus ist erstanden, hat &uuml;berwunden (BWV 284)",
+   "path": "Corales de Bach/chor200.krn"
+  },
+  {
+   "file": "chor201.krn",
+   "title": "O Mensch, bewein dein' S&uuml;nde gro&szlig; (BWV 402)",
+   "path": "Corales de Bach/chor201.krn"
+  },
+  {
+   "file": "chor202.krn",
+   "title": "O wir armen S&uuml;nder (BWV 407)",
+   "path": "Corales de Bach/chor202.krn"
+  },
+  {
+   "file": "chor203.krn",
+   "title": "O Mensch, schau Jesum Christum an (BWV 403)",
+   "path": "Corales de Bach/chor203.krn"
+  },
+  {
+   "file": "chor204.krn",
+   "title": "Wer wei&szlig;, wie nahe mir mein Ende (BWV 166/6)",
+   "path": "Corales de Bach/chor204.krn"
+  },
+  {
+   "file": "chor205.krn",
+   "title": "Herr Gott, dich loben wir (BWV 328)",
+   "path": "Corales de Bach/chor205.krn"
+  },
+  {
+   "file": "chor206.krn",
+   "title": "So gibst du nun, mein Jesu, gute Nacht (BWV 412)",
+   "path": "Corales de Bach/chor206.krn"
+  },
+  {
+   "file": "chor207.krn",
+   "title": "Des heil'gen Geistes reiche Gnad (BWV 295)",
+   "path": "Corales de Bach/chor207.krn"
+  },
+  {
+   "file": "chor208.krn",
+   "title": "Als vierzig Tag nach Ostern (BWV 266)",
+   "path": "Corales de Bach/chor208.krn"
+  },
+  {
+   "file": "chor209.krn",
+   "title": "Dir, dir, Jehova will ich singen (BWV 299)",
+   "path": "Corales de Bach/chor209.krn"
+  },
+  {
+   "file": "chor210.krn",
+   "title": "Christe, du Beistand deiner Kreuzgemeinde (BWV 275)",
+   "path": "Corales de Bach/chor210.krn"
+  },
+  {
+   "file": "chor211.krn",
+   "title": "Weltlich Ehr und zeitlich Gut (BWV 426)",
+   "path": "Corales de Bach/chor211.krn"
+  },
+  {
+   "file": "chor212.krn",
+   "title": "Herr, ich dank an jene Zeit (BWV 329)",
+   "path": "Corales de Bach/chor212.krn"
+  },
+  {
+   "file": "chor213.krn",
+   "title": "O wie selig ihr doch, ihr Frommen (BWV 405)",
+   "path": "Corales de Bach/chor213.krn"
+  },
+  {
+   "file": "chor214.krn",
+   "title": "Mitten wir im Leben sind (BWV 383)",
+   "path": "Corales de Bach/chor214.krn"
+  },
+  {
+   "file": "chor215.krn",
+   "title": "Verleih uns Frieden gn&auml;diglich (BWV 126/6)",
+   "path": "Corales de Bach/chor215.krn"
+  },
+  {
+   "file": "chor216.krn",
+   "title": "Es ist genug! so nimm Herr (BWV 60/5)",
+   "path": "Corales de Bach/chor216.krn"
+  },
+  {
+   "file": "chor217.krn",
+   "title": "Oh God, how many heart pains (BWV 153/9)",
+   "path": "Corales de Bach/chor217.krn"
+  },
+  {
+   "file": "chor218.krn",
+   "title": "La&szlig;, o Herr, dein Ohr sich neigen (BWV 372)",
+   "path": "Corales de Bach/chor218.krn"
+  },
+  {
+   "file": "chor219.krn",
+   "title": "O wie selig seid ihr doch, ihr Frommen (BWV 406)",
+   "path": "Corales de Bach/chor219.krn"
+  },
+  {
+   "file": "chor220.krn",
+   "title": "Sollt ich meinem Gott nicht singen (BWV 413)",
+   "path": "Corales de Bach/chor220.krn"
+  },
+  {
+   "file": "chor221.krn",
+   "title": "Herr, straf mich nicht in deinem Zorn (BWV 338)",
+   "path": "Corales de Bach/chor221.krn"
+  },
+  {
+   "file": "chor222.krn",
+   "title": "Nun preiset alle Gottes Barmherzigkeit (BWV 391)",
+   "path": "Corales de Bach/chor222.krn"
+  },
+  {
+   "file": "chor223.krn",
+   "title": "Ich dank dir, Gott, f&uuml;r all Wohlat (BWV 346)",
+   "path": "Corales de Bach/chor223.krn"
+  },
+  {
+   "file": "chor224.krn",
+   "title": "Das walt Gott Vater und Gott Sohn (BWV 290)",
+   "path": "Corales de Bach/chor224.krn"
+  },
+  {
+   "file": "chor225.krn",
+   "title": "Gott, der du selber bist das Licht (BWV 316)",
+   "path": "Corales de Bach/chor225.krn"
+  },
+  {
+   "file": "chor226.krn",
+   "title": "Herr Jesu Christ, du hast bereit't (BWV 333)",
+   "path": "Corales de Bach/chor226.krn"
+  },
+  {
+   "file": "chor227.krn",
+   "title": "Lobet den Herren, denn er ist freundlich (BWV 374)",
+   "path": "Corales de Bach/chor227.krn"
+  },
+  {
+   "file": "chor228.krn",
+   "title": "Danket dem Herren, denn er ist sehr freundlich (BWV 286)",
+   "path": "Corales de Bach/chor228.krn"
+  },
+  {
+   "file": "chor229.krn",
+   "title": "Ich danke dir, o Gott, in deinem Throne (BWV 350)",
+   "path": "Corales de Bach/chor229.krn"
+  },
+  {
+   "file": "chor230.krn",
+   "title": "Christ, der du bist der helle Tag (BWV 273)",
+   "path": "Corales de Bach/chor230.krn"
+  },
+  {
+   "file": "chor231.krn",
+   "title": "Die Nacht ist kommen (BWV 296)",
+   "path": "Corales de Bach/chor231.krn"
+  },
+  {
+   "file": "chor232.krn",
+   "title": "Die Sonn hat sich mit ihrem Glanz (BWV 297)",
+   "path": "Corales de Bach/chor232.krn"
+  },
+  {
+   "file": "chor233.krn",
+   "title": "Werde munter, mein Gem&uuml;te (BWV 154/3)",
+   "path": "Corales de Bach/chor233.krn"
+  },
+  {
+   "file": "chor234.krn",
+   "title": "Gott lebet noch (BWV 320)",
+   "path": "Corales de Bach/chor234.krn"
+  },
+  {
+   "file": "chor235.krn",
+   "title": "Heilig, heilig (BWV 325)",
+   "path": "Corales de Bach/chor235.krn"
+  },
+  {
+   "file": "chor236.krn",
+   "title": "O Jesu, du mein Br&auml;utigam (BWV 335)",
+   "path": "Corales de Bach/chor236.krn"
+  },
+  {
+   "file": "chor237.krn",
+   "title": "Was betr&uuml;bst du dich, mein Herze (BWV 423)",
+   "path": "Corales de Bach/chor237.krn"
+  },
+  {
+   "file": "chor238.krn",
+   "title": "Es wind schier der letzte Tag (BWV 310)",
+   "path": "Corales de Bach/chor238.krn"
+  },
+  {
+   "file": "chor239.krn",
+   "title": "Den Veter dort oben (BWV 292)",
+   "path": "Corales de Bach/chor239.krn"
+  },
+  {
+   "file": "chor240.krn",
+   "title": "Nun sich der Tag geendet hat (BWV 396)",
+   "path": "Corales de Bach/chor240.krn"
+  },
+  {
+   "file": "chor241.krn",
+   "title": "Was willst du dich, o meine Seele (BWV 425)",
+   "path": "Corales de Bach/chor241.krn"
+  },
+  {
+   "file": "chor242.krn",
+   "title": "Wie bist du, Seele, in mir so gar betr&uuml;bt (BWV 435)",
+   "path": "Corales de Bach/chor242.krn"
+  },
+  {
+   "file": "chor243.krn",
+   "title": "Jesu, du mein liebstes Leben (BWV 356)",
+   "path": "Corales de Bach/chor243.krn"
+  },
+  {
+   "file": "chor244.krn",
+   "title": "Jesu, Jesu, du bist mein (BWV 357)",
+   "path": "Corales de Bach/chor244.krn"
+  },
+  {
+   "file": "chor245.krn",
+   "title": "Christe, der du bist Tag und Licht (BWV 274)",
+   "path": "Corales de Bach/chor245.krn"
+  },
+  {
+   "file": "chor246.krn",
+   "title": "Singt dem Herrn ein neues Lied (BWV 411)",
+   "path": "Corales de Bach/chor246.krn"
+  },
+  {
+   "file": "chor247.krn",
+   "title": "Wenn wir in h&ouml;chsten N&ouml;ten sein (BWV 432)",
+   "path": "Corales de Bach/chor247.krn"
+  },
+  {
+   "file": "chor248.krn",
+   "title": "Sei Lob und Ehr dem h&ouml;chsten Gut (BWV 117/4)",
+   "path": "Corales de Bach/chor248.krn"
+  },
+  {
+   "file": "chor249.krn",
+   "title": "Allein Gott in der H&ouml;h sei Ehr (BWV 260)",
+   "path": "Corales de Bach/chor249.krn"
+  },
+  {
+   "file": "chor250.krn",
+   "title": "Ein feste Burg ist unser Gott (BWV 303)",
+   "path": "Corales de Bach/chor250.krn"
+  },
+  {
+   "file": "chor251.krn",
+   "title": "Ich bin ja, Herr, in deiner Macht (BWV 345)",
+   "path": "Corales de Bach/chor251.krn"
+  },
+  {
+   "file": "chor252.krn",
+   "title": "Jesu, nun sei gepreiset (BWV 362)",
+   "path": "Corales de Bach/chor252.krn"
+  },
+  {
+   "file": "chor253.krn",
+   "title": "Oh God, look down from Heaven (BWV 77/6)",
+   "path": "Corales de Bach/chor253.krn"
+  },
+  {
+   "file": "chor254.krn",
+   "title": "Weg, mein Herz, mit den Gedanken (BWV 25/6)",
+   "path": "Corales de Bach/chor254.krn"
+  },
+  {
+   "file": "chor255.krn",
+   "title": "Was frag ich nach der Welt (BWV 64/4)",
+   "path": "Corales de Bach/chor255.krn"
+  },
+  {
+   "file": "chor256.krn",
+   "title": "Jesu, deine tiefen Wunden (BWV 194/6)",
+   "path": "Corales de Bach/chor256.krn"
+  },
+  {
+   "file": "chor257.krn",
+   "title": "Nun la&szlig;t uns Gott, dem Herren (BWV 194/12)",
+   "path": "Corales de Bach/chor257.krn"
+  },
+  {
+   "file": "chor258.krn",
+   "title": "Mein' Augen schlie&szlig; ich jetzt (BWV 378)",
+   "path": "Corales de Bach/chor258.krn"
+  },
+  {
+   "file": "chor259.krn",
+   "title": "Verleih uns Frieden gn&auml;diglich (BWV 42/7)",
+   "path": "Corales de Bach/chor259.krn"
+  },
+  {
+   "file": "chor260.krn",
+   "title": "Es ist gewi&szlig;lich an der Zeit (BWV 307)",
+   "path": "Corales de Bach/chor260.krn"
+  },
+  {
+   "file": "chor261.krn",
+   "title": "Christ lag in Todesbanden (BWV 158/4 (279))",
+   "path": "Corales de Bach/chor261.krn"
+  },
+  {
+   "file": "chor262.krn",
+   "title": "Oh God, look down from Heaven (BWV 2/6)",
+   "path": "Corales de Bach/chor262.krn"
+  },
+  {
+   "file": "chor263.krn",
+   "title": "Jesu, meine Freude (BWV 227/1)",
+   "path": "Corales de Bach/chor263.krn"
+  },
+  {
+   "file": "chor264.krn",
+   "title": "Jesu meines Herzens Freud (BWV 361)",
+   "path": "Corales de Bach/chor264.krn"
+  },
+  {
+   "file": "chor265.krn",
+   "title": "Was mein Gott will, das g'schen allzeit (BWV 144/6)",
+   "path": "Corales de Bach/chor265.krn"
+  },
+  {
+   "file": "chor266.krn",
+   "title": "Herr Jesu Christ, du h&ouml;chstes Gut (BWV 48/7)",
+   "path": "Corales de Bach/chor266.krn"
+  },
+  {
+   "file": "chor267.krn",
+   "title": "Vater unser im Himmelreich (BWV 90/5)",
+   "path": "Corales de Bach/chor267.krn"
+  },
+  {
+   "file": "chor268.krn",
+   "title": "Nun lob, mein Seel, den Herren (BWV 389)",
+   "path": "Corales de Bach/chor268.krn"
+  },
+  {
+   "file": "chor269.krn",
+   "title": "Jesu, der du meine Seele (BWV 353)",
+   "path": "Corales de Bach/chor269.krn"
+  },
+  {
+   "file": "chor270.krn",
+   "title": "Befiehl du deine Wege (BWV 161/6)",
+   "path": "Corales de Bach/chor270.krn"
+  },
+  {
+   "file": "chor271.krn",
+   "title": "Gib dich zufrieden und sei stille (BWV 315)",
+   "path": "Corales de Bach/chor271.krn"
+  },
+  {
+   "file": "chor272.krn",
+   "title": "Ich dank' dir, lieber Herre (BWV 348)",
+   "path": "Corales de Bach/chor272.krn"
+  },
+  {
+   "file": "chor273.krn",
+   "title": "Ein feste Burg ist unser Gott (BWV 80/8)",
+   "path": "Corales de Bach/chor273.krn"
+  },
+  {
+   "file": "chor274.krn",
+   "title": "O Ewigkeit, du Donnerwort (BWV 397)",
+   "path": "Corales de Bach/chor274.krn"
+  },
+  {
+   "file": "chor275.krn",
+   "title": "O Welt, sieh hier dein Leben (BWV 393)",
+   "path": "Corales de Bach/chor275.krn"
+  },
+  {
+   "file": "chor276.krn",
+   "title": "Lobt Gott, ihr Christen allzugleich (BWV 375)",
+   "path": "Corales de Bach/chor276.krn"
+  },
+  {
+   "file": "chor277.krn",
+   "title": "Herzlich lieb hab ich dich, o Herr (BWV 340)",
+   "path": "Corales de Bach/chor277.krn"
+  },
+  {
+   "file": "chor278.krn",
+   "title": "Wie sch&ouml;n leuchtet der Morgenstern (BWV 436)",
+   "path": "Corales de Bach/chor278.krn"
+  },
+  {
+   "file": "chor279.krn",
+   "title": "Ach Gott und Herr (BWV 48/3)",
+   "path": "Corales de Bach/chor279.krn"
+  },
+  {
+   "file": "chor280.krn",
+   "title": "Eins ist not, ach Herr, dies eine (BWV 304)",
+   "path": "Corales de Bach/chor280.krn"
+  },
+  {
+   "file": "chor281.krn",
+   "title": "Wo soll ich fliehen hin (BWV 89/6)",
+   "path": "Corales de Bach/chor281.krn"
+  },
+  {
+   "file": "chor282.krn",
+   "title": "Freu dich sehr, o meine Seele (BWV 25/6)",
+   "path": "Corales de Bach/chor282.krn"
+  },
+  {
+   "file": "chor283.krn",
+   "title": "Jesu, meine Freude (BWV 227/7)",
+   "path": "Corales de Bach/chor283.krn"
+  },
+  {
+   "file": "chor284.krn",
+   "title": "Herr Jesu Christ, wahr Mensch und Gott (BWV 127/5)",
+   "path": "Corales de Bach/chor284.krn"
+  },
+  {
+   "file": "chor285.krn",
+   "title": "W&auml;r Gott nicht mit uns diese Zeit (BWV 257)",
+   "path": "Corales de Bach/chor285.krn"
+  },
+  {
+   "file": "chor286.krn",
+   "title": "Befiehl du deine Wege (BWV 270)",
+   "path": "Corales de Bach/chor286.krn"
+  },
+  {
+   "file": "chor287.krn",
+   "title": "Herr, ich habe mi&szlig;gehandelt (BWV 331)",
+   "path": "Corales de Bach/chor287.krn"
+  },
+  {
+   "file": "chor288.krn",
+   "title": "Gelobet seist du, Jesu Christ (BWV 314)",
+   "path": "Corales de Bach/chor288.krn"
+  },
+  {
+   "file": "chor289.krn",
+   "title": "Nun ruhen alle W&auml;lder (BWV 392)",
+   "path": "Corales de Bach/chor289.krn"
+  },
+  {
+   "file": "chor290.krn",
+   "title": "Es ist das Heil uns kommen her (BWV 917)",
+   "path": "Corales de Bach/chor290.krn"
+  },
+  {
+   "file": "chor291.krn",
+   "title": "Was frag ich nach der Welt (BWV 64/4 (94/8))",
+   "path": "Corales de Bach/chor291.krn"
+  },
+  {
+   "file": "chor292.krn",
+   "title": "Nimm von uns, Herr, du treuer Gott (BWV 101/7)",
+   "path": "Corales de Bach/chor292.krn"
+  },
+  {
+   "file": "chor293.krn",
+   "title": "Was Gott tut, das ist wohlgetan (BWV 12/7 & 69a/16)",
+   "path": "Corales de Bach/chor293.krn"
+  },
+  {
+   "file": "chor294.krn",
+   "title": "Herr Jesu Christ, du h&ouml;chstes Gut (BWV 113/8)",
+   "path": "Corales de Bach/chor294.krn"
+  },
+  {
+   "file": "chor295.krn",
+   "title": "Herr Jesu Christ, mein's Lebens Licht (BWV 335)",
+   "path": "Corales de Bach/chor295.krn"
+  },
+  {
+   "file": "chor296.krn",
+   "title": "Nun lob, mein Seel, den Herren (BWV 390)",
+   "path": "Corales de Bach/chor296.krn"
+  },
+  {
+   "file": "chor297.krn",
+   "title": "Jesu, der du meine Seele (BWV 78/7)",
+   "path": "Corales de Bach/chor297.krn"
+  },
+  {
+   "file": "chor298.krn",
+   "title": "Weg, mein Herz, mit den Gedanken (BWV 19/7)",
+   "path": "Corales de Bach/chor298.krn"
+  },
+  {
+   "file": "chor299.krn",
+   "title": "Meinen Jesum la&szlig; ich nicht, weil (BWV 380)",
+   "path": "Corales de Bach/chor299.krn"
+  },
+  {
+   "file": "chor300.krn",
+   "title": "Warum betr&uuml;bst du dich, mein Herz (BWV 421)",
+   "path": "Corales de Bach/chor300.krn"
+  },
+  {
+   "file": "chor301.krn",
+   "title": "Ach lieben Christen, seid getrost (BWV 114/7)",
+   "path": "Corales de Bach/chor301.krn"
+  },
+  {
+   "file": "chor302.krn",
+   "title": "Hilf, Gott, la&szlig; mir's gelingen (BWV 343)",
+   "path": "Corales de Bach/chor302.krn"
+  },
+  {
+   "file": "chor303.krn",
+   "title": "Herr Christ, der ein'ge Gotts Sohn (BWV 96/6)",
+   "path": "Corales de Bach/chor303.krn"
+  },
+  {
+   "file": "chor304.krn",
+   "title": "Auf meinen lieben Gott (BWV 5/7)",
+   "path": "Corales de Bach/chor304.krn"
+  },
+  {
+   "file": "chor305.krn",
+   "title": "Wie sch&ouml;n leuchtet der Morgenstern (BWV 36.4)",
+   "path": "Corales de Bach/chor305.krn"
+  },
+  {
+   "file": "chor306.krn",
+   "title": "O Mensch, bewein dein' S&uuml;nde gro&szlig; (BWV 402)",
+   "path": "Corales de Bach/chor306.krn"
+  },
+  {
+   "file": "chor307.krn",
+   "title": "Christus, der uns selig macht (BWV 283)",
+   "path": "Corales de Bach/chor307.krn"
+  },
+  {
+   "file": "chor308.krn",
+   "title": "Oh God, how many heart pains (BWV 3/6)",
+   "path": "Corales de Bach/chor308.krn"
+  },
+  {
+   "file": "chor309.krn",
+   "title": "Ein L&auml;mmelein geht und tr&auml;gt die Schuld (BWV 267)",
+   "path": "Corales de Bach/chor309.krn"
+  },
+  {
+   "file": "chor310.krn",
+   "title": "Mach's mit mir, Gott, nach deiner G&uuml;t (BWV 245/22)",
+   "path": "Corales de Bach/chor310.krn"
+  },
+  {
+   "file": "chor311.krn",
+   "title": "Dank sei Gott in der H&ouml;he (BWV 287)",
+   "path": "Corales de Bach/chor311.krn"
+  },
+  {
+   "file": "chor312.krn",
+   "title": "O Gott, du frommer Gott (BWV 398)",
+   "path": "Corales de Bach/chor312.krn"
+  },
+  {
+   "file": "chor313.krn",
+   "title": "Allein Gott in der H&ouml;h sei Ehr (BWV 112/5)",
+   "path": "Corales de Bach/chor313.krn"
+  },
+  {
+   "file": "chor314.krn",
+   "title": "Das alte Jahr vergangen ist (BWV 289)",
+   "path": "Corales de Bach/chor314.krn"
+  },
+  {
+   "file": "chor315.krn",
+   "title": "O Gott, du frommer Gott (BWV 399)",
+   "path": "Corales de Bach/chor315.krn"
+  },
+  {
+   "file": "chor316.krn",
+   "title": "Christus, der ist mein Leben (BWV 282)",
+   "path": "Corales de Bach/chor316.krn"
+  },
+  {
+   "file": "chor317.krn",
+   "title": "Herr, wie du willt, so schick's mit mir (BWV 156/6)",
+   "path": "Corales de Bach/chor317.krn"
+  },
+  {
+   "file": "chor318.krn",
+   "title": "Herr wie du willst, so schick's mit mir (BWV 339)",
+   "path": "Corales de Bach/chor318.krn"
+  },
+  {
+   "file": "chor319.krn",
+   "title": "Sanctus, sanctus Dominus Deus Sabaoth (BWV 325)",
+   "path": "Corales de Bach/chor319.krn"
+  },
+  {
+   "file": "chor320.krn",
+   "title": "Gott sei uns gn&auml;dig und barmherzig (BWV 323)",
+   "path": "Corales de Bach/chor320.krn"
+  },
+  {
+   "file": "chor321.krn",
+   "title": "Wir Christenleut (BWV 40/3)",
+   "path": "Corales de Bach/chor321.krn"
+  },
+  {
+   "file": "chor322.krn",
+   "title": "Wenn mein St&uuml;ndlein vorhanden ist (BWV 428)",
+   "path": "Corales de Bach/chor322.krn"
+  },
+  {
+   "file": "chor323.krn",
+   "title": "Wie sch&ouml;n leuchtet der Morgenstern (BWV 172/6)",
+   "path": "Corales de Bach/chor323.krn"
+  },
+  {
+   "file": "chor324.krn",
+   "title": "Jesu, meine Freude (BWV 81/7)",
+   "path": "Corales de Bach/chor324.krn"
+  },
+  {
+   "file": "chor325.krn",
+   "title": "Mit Fried und Freud ich fahr dahin (BWV 83/5)",
+   "path": "Corales de Bach/chor325.krn"
+  },
+  {
+   "file": "chor326.krn",
+   "title": "Allein Gott in der H&ouml;h sei Ehr (BWV 104/6)",
+   "path": "Corales de Bach/chor326.krn"
+  },
+  {
+   "file": "chor327.krn",
+   "title": "Jesu, nun sei gepreiset (BWV 190/7)",
+   "path": "Corales de Bach/chor327.krn"
+  },
+  {
+   "file": "chor328.krn",
+   "title": "Liebester Jesu, wir sind hier (BWV 373)",
+   "path": "Corales de Bach/chor328.krn"
+  },
+  {
+   "file": "chor329.krn",
+   "title": "Sei Lob und Ehr dem h&ouml;chsten Gut (BWV 251)",
+   "path": "Corales de Bach/chor329.krn"
+  },
+  {
+   "file": "chor330.krn",
+   "title": "Nun danket alle Gott (BWV 252)",
+   "path": "Corales de Bach/chor330.krn"
+  },
+  {
+   "file": "chor331.krn",
+   "title": "Wo soll ich fliehen hin (BWV 136/6)",
+   "path": "Corales de Bach/chor331.krn"
+  },
+  {
+   "file": "chor332.krn",
+   "title": "Von Gott will ich nicht lassen (BWV 418)",
+   "path": "Corales de Bach/chor332.krn"
+  },
+  {
+   "file": "chor333.krn",
+   "title": "Es woll' uns Gott gen&auml;dig sein (BWV 69/6)",
+   "path": "Corales de Bach/chor333.krn"
+  },
+  {
+   "file": "chor336.krn",
+   "title": "Wo Gott, der Herr, mich bei uns h&auml;lt (BWV 258)",
+   "path": "Corales de Bach/chor336.krn"
+  },
+  {
+   "file": "chor347.krn",
+   "title": "Was Gott tut, das ist wohlgetan (BWV 250)",
+   "path": "Corales de Bach/chor347.krn"
+  },
+  {
+   "file": "chor348.krn",
+   "title": "Meinen Jesum la&szlig; ich nicht, weil (BWV 70 & 70a/11)",
+   "path": "Corales de Bach/chor348.krn"
+  },
+  {
+   "file": "chor349.krn",
+   "title": "Ich hab in Gottes Herz und Sinn (BWV 103/6)",
+   "path": "Corales de Bach/chor349.krn"
+  },
+  {
+   "file": "chor350.krn",
+   "title": "Jesu, meiner Freuden Freude (BWV 360)",
+   "path": "Corales de Bach/chor350.krn"
+  },
+  {
+   "file": "chor351.krn",
+   "title": "Wenn mein St&uuml;ndlein vorhanden ist (BWV 430)",
+   "path": "Corales de Bach/chor351.krn"
+  },
+  {
+   "file": "chor352.krn",
+   "title": "Es woll' uns Gott gen&auml;dig sein (BWV 312)",
+   "path": "Corales de Bach/chor352.krn"
+  },
+  {
+   "file": "chor354.krn",
+   "title": "Sei Lob und Ehr dem h&ouml;chsten Gut (BWV 117/4)",
+   "path": "Corales de Bach/chor354.krn"
+  },
+  {
+   "file": "chor355.krn",
+   "title": "Nun ruhen alle W&auml;lder (BWV 44/7)",
+   "path": "Corales de Bach/chor355.krn"
+  },
+  {
+   "file": "chor356.krn",
+   "title": "Jesu, meine Freude (BWV 358)",
+   "path": "Corales de Bach/chor356.krn"
+  },
+  {
+   "file": "chor357.krn",
+   "title": "Warum sollt ich mich denn gr&auml;men (BWV 422)",
+   "path": "Corales de Bach/chor357.krn"
+  },
+  {
+   "file": "chor358.krn",
+   "title": "Meine Seele erhebet den Herrn (BWV 10/7)",
+   "path": "Corales de Bach/chor358.krn"
+  },
+  {
+   "file": "chor359.krn",
+   "title": "Allein zu dir, Herr Jesu Christ (BWV 261)",
+   "path": "Corales de Bach/chor359.krn"
+  },
+  {
+   "file": "chor360.krn",
+   "title": "Wir Christenleut (BWV 248/35)",
+   "path": "Corales de Bach/chor360.krn"
+  },
+  {
+   "file": "chor361.krn",
+   "title": "Du Lebensfurst, Herr Jesu Christ (BWV 248/12)",
+   "path": "Corales de Bach/chor361.krn"
+  },
+  {
+   "file": "chor363.krn",
+   "title": "O Welt, sieh hier dein Leben (BWV 395)",
+   "path": "Corales de Bach/chor363.krn"
+  },
+  {
+   "file": "chor369.krn",
+   "title": "Jesu, der du meine Seele (BWV 354)",
+   "path": "Corales de Bach/chor369.krn"
+  }
+ ],
+ "brandenburg": [
+  {
+   "file": "bwv1046a.krn",
+   "title": "Brandenburgische Konzerte F (BWV 1046)",
+   "path": "brandenburg/bwv1046a.krn"
+  },
+  {
+   "file": "bwv1046b.krn",
+   "title": "Brandenburgische Konzerte F (BWV 1046)",
+   "path": "brandenburg/bwv1046b.krn"
+  },
+  {
+   "file": "bwv1046c.krn",
+   "title": "Brandenburgische Konzerte F (BWV 1046)",
+   "path": "brandenburg/bwv1046c.krn"
+  },
+  {
+   "file": "bwv1046d.krn",
+   "title": "Brandenburgische Konzerte F (BWV 1046)",
+   "path": "brandenburg/bwv1046d.krn"
+  },
+  {
+   "file": "bwv1046e.krn",
+   "title": "Brandenburgische Konzerte F (BWV 1046)",
+   "path": "brandenburg/bwv1046e.krn"
+  },
+  {
+   "file": "bwv1046f.krn",
+   "title": "Brandenburgische Konzerte F (BWV 1046)",
+   "path": "brandenburg/bwv1046f.krn"
+  },
+  {
+   "file": "bwv1046g.krn",
+   "title": "Brandenburgische Konzerte F (BWV 1046)",
+   "path": "brandenburg/bwv1046g.krn"
+  },
+  {
+   "file": "bwv1047a.krn",
+   "title": "Brandenburgische Konzerte F (BWV 1047)",
+   "path": "brandenburg/bwv1047a.krn"
+  },
+  {
+   "file": "bwv1047b.krn",
+   "title": "Brandenburgische Konzerte F (BWV 1047)",
+   "path": "brandenburg/bwv1047b.krn"
+  },
+  {
+   "file": "bwv1047c.krn",
+   "title": "Brandenburgische Konzerte F (BWV 1047)",
+   "path": "brandenburg/bwv1047c.krn"
+  },
+  {
+   "file": "bwv1048a.krn",
+   "title": "Brandenburgische Konzerte G (BWV 1048)",
+   "path": "brandenburg/bwv1048a.krn"
+  },
+  {
+   "file": "bwv1048b.krn",
+   "title": "Brandenburgische Konzerte G (BWV 1048)",
+   "path": "brandenburg/bwv1048b.krn"
+  },
+  {
+   "file": "bwv1049a.krn",
+   "title": "Brandenburgische Konzerte G (BWV 1049)",
+   "path": "brandenburg/bwv1049a.krn"
+  },
+  {
+   "file": "bwv1049b.krn",
+   "title": "Brandenburgische Konzerte G (BWV 1049)",
+   "path": "brandenburg/bwv1049b.krn"
+  },
+  {
+   "file": "bwv1049c.krn",
+   "title": "Brandenburgische Konzerte G (BWV 1049)",
+   "path": "brandenburg/bwv1049c.krn"
+  },
+  {
+   "file": "bwv1050a.krn",
+   "title": "Brandenburgische Konzerte D (BWV 1050)",
+   "path": "brandenburg/bwv1050a.krn"
+  },
+  {
+   "file": "bwv1050b.krn",
+   "title": "Brandenburgische Konzerte D (BWV 1050)",
+   "path": "brandenburg/bwv1050b.krn"
+  },
+  {
+   "file": "bwv1050c.krn",
+   "title": "Brandenburgische Konzerte D (BWV 1050)",
+   "path": "brandenburg/bwv1050c.krn"
+  },
+  {
+   "file": "bwv1051a.krn",
+   "title": "Brandenburgische Konzerte B (BWV 1051)",
+   "path": "brandenburg/bwv1051a.krn"
+  },
+  {
+   "file": "bwv1051b.krn",
+   "title": "Brandenburgische Konzerte B (BWV 1051)",
+   "path": "brandenburg/bwv1051b.krn"
+  },
+  {
+   "file": "bwv1051c.krn",
+   "title": "Brandenburgische Konzerte B (BWV 1051)",
+   "path": "brandenburg/bwv1051c.krn"
+  }
+ ]
+}

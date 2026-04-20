@@ -1,0 +1,109 @@
+
+       + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
+       +                                                           +
+       +                 THE BRANDENBURG CONCERTOS                 +
+       +                                                           +
+       +                          -  by  -                         +
+       +                                                           +
+       +                   Johann Sebastian Bach                   +
+       +                                                           +
+       + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
+
+            `Six concertos with several instruments, dedicated
+             to His Royal Highness Christian Ludwig,  Margrave
+             of Brandenburg, etc. etc.  by His very humble and
+             most  obedient servant,  Johann  Sebastian  Bach.'
+
+
+This electronic edition of Bach's six Brandenburg Concertos has been
+produced by the Center for Computer Assisted Research in the Humanities.
+The accompanying files were prepared from the Bach-Gesellschaft edition
+of 1871, edited by Wilhelm Rust, and published in Leipzig.
+
+Machine transcription, proof reading, and proof listening was done by
+Frances Bennion, Edmund Correia, Jr., and Steven Rasmussen, under the
+supervision of Dr. Eleanor Selfridge-Field.  Translation to the Humdrum
+**kern format was carried out by Dr. David Huron.  Music entry and
+editing was done using the "Tenx" facilities designed and implemented
+by Dr. Walter Hewlett.  This electronic edition is also available in the
+MIDI format.  (See below for ordering information.)
+
+The accompanying files are protected by copyright and are distributed by
+license only.  Refer to the accompanying license statement and original
+license agreement for details.
+
+======
+INDEX:
+======
+
+                                 filename     bytes    checksum A   checksum B
+Brandenburg Concerto No. 1
+     [Allegro] ............    bwv1046a.krn   77814    3144305228     59461
+     Adagio  ..............    bwv1046b.krn   21618    3009071254     49955
+     Allegro ..............    bwv1046c.krn   87586    1303625773     43062
+     Adagio  ..............    bwv1046d.krn   11592     212046885     31290
+     Allegro ..............    bwv1046e.krn    3513      45970044     63978
+     Menuetto .............    bwv1046f.krn    7435     218844876     57335
+     Polacca ..............    bwv1046g.krn    4001    4139019136     25819
+
+Brandenburg Concerto No. 2
+     [Allegro] ............    bwv1047a.krn   90439    3383055937     25563
+     Andante ..............    bwv1047b.krn   12768     222362332     59362
+     Allegro assai ........    bwv1047c.krn   48943     746572548     62573
+
+Brandenburg Concerto No. 3
+     [Allegro] ............    bwv1048a.krn   98815    3037448930     44270
+     Allegro ..............    bwv1048b.krn   54230    1818165867     51660
+
+Brandenburg Concerto No. 4
+     Allegro ..............    bwv1049a.krn  112890    2552783396     26257
+     Andante ..............    bwv1049b.krn   20181     504263026     46525
+     Presto  ..............    bwv1049c.krn   71610    1498351512     13514
+
+Brandenburg Concerto No. 5
+     Allegro ..............    bwv1050a.krn  140966       5734662      2978
+     Affettuoso ...........    bwv1050b.krn   15523    2710916017     23711
+     Allegro ..............    bwv1050c.krn   90670    4269411093     13391
+
+Brandenburg Concerto No. 6
+     [Allegro] ............    bwv1051a.krn   67843    2397639423     58871
+     Adagio man no tanto ..    bwv1051b.krn   18445     383887202     30636
+     Allegro ..............    bwv1051c.krn   57975    2368991215     26185
+
+==========
+CHECKSUMS:
+==========
+
+     A "checksum" value is an error-checking mechanism that may assist
+     in determining whether a file has been modified or data garbled
+     due to transmission or faulty storage.  The "checksum A" value
+     uses the POSIX.2 checksum algorithm.  The "checksum B" value uses
+     the CCITT cyclic redundancy check algorithm.  Note that checksum
+     commands differ from system to system.  The above checksums were
+     calculated for DOS-format data.
+
+=======
+ORDERS:
+=======
+
+Copies of the CCARH edition of the Brandenburg Concertos can be ordered
+from:
+
+            Center for Computer Assisted Research in the Humanities
+            128 Braun Music Building
+            Stanford, CA
+            U.S.A.        94305
+
+Telephone Orders:   (650) 725-9240
+      FAX Orders:   (650) 725-9290
+   E-mail orders:   ccarh@ccrma.stanford.edu
+
+=========
+FEEDBACK:
+=========
+
+Unlike printed musical scores, electronic editions are readily up-dated.
+Should you encounter any errors in the enclosed data files, we'd like to
+hear from you.  Your input can benefit other music scholars.  When re-
+leasing subsequent electronic editions, our policy is to acknowledge by
+name all users who identify unknown representation errors in our data.

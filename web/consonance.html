@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking de Consonancia de Acordes</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127925;</text></svg>">
+    <style>
+        /* === CONSONANCE PAGE === */
+        main.cons-main { padding: 1.5rem 2rem; display: flex; flex-direction: column; gap: 1rem; }
+
+        .cons-controls {
+            display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-end;
+            background: var(--bg-card); padding: 1rem; border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+
+        .metric-desc {
+            padding: 0.8rem 1rem;
+            border-left: 3px solid var(--accent2); background: var(--bg-input);
+            border-radius: 4px;
+        }
+        .metric-desc #metric-short { color: var(--text); font-size: 0.9rem; font-weight: 600; }
+        .metric-desc #metric-expand-toggle {
+            background: none; border: none; color: var(--accent2);
+            cursor: pointer; padding: 0.3rem 0; margin-top: 0.3rem;
+            font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .metric-desc #metric-long {
+            display: none; margin-top: 0.6rem; padding-top: 0.6rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.88rem; color: var(--text-dim); line-height: 1.65;
+        }
+        .metric-desc #metric-long.open { display: block; }
+        .metric-desc #metric-long p { margin-bottom: 0.7rem; }
+        .metric-desc #metric-long strong { color: var(--text); }
+        .metric-desc #metric-long em { color: var(--text); font-style: italic; }
+        .metric-desc #metric-long code {
+            background: var(--bg); padding: 1px 6px; border-radius: 3px;
+            font-family: 'SF Mono', Menlo, monospace; font-size: 0.85em;
+        }
+        .metric-desc #metric-long .formula {
+            background: var(--bg); padding: 0.6rem 1rem; border-radius: 4px;
+            font-family: 'SF Mono', Menlo, monospace; color: var(--text);
+            text-align: center; font-size: 0.92em;
+        }
+
+        .intro-card {
+            background: var(--bg-card); padding: 1rem 1.2rem; border-radius: var(--radius);
+            border: 1px solid var(--border); font-size: 0.88rem; color: var(--text-dim);
+            line-height: 1.65;
+        }
+        .intro-card h2 { color: var(--text); font-size: 1rem; margin-bottom: 0.5rem; }
+        .intro-card details { margin-top: 0.5rem; }
+        .intro-card summary {
+            cursor: pointer; color: var(--accent2); font-size: 0.8rem;
+            text-transform: uppercase; letter-spacing: 0.5px; padding: 0.2rem 0;
+        }
+        .intro-card details[open] summary { margin-bottom: 0.5rem; }
+        .intro-card code {
+            background: var(--bg); padding: 1px 5px; border-radius: 3px;
+            font-family: 'SF Mono', Menlo, monospace; font-size: 0.85em; color: var(--text);
+        }
+        .intro-card strong { color: var(--text); }
+
+        .view-tabs { display: flex; gap: 0.25rem; }
+        .view-tab {
+            padding: 0.45rem 0.9rem; background: var(--bg-input); color: var(--text-dim);
+            border: 1px solid var(--border); cursor: pointer; font-size: 0.85rem;
+        }
+        .view-tab.active { background: var(--accent); color: white; border-color: var(--accent); }
+        .view-tab:first-child { border-radius: 6px 0 0 6px; }
+        .view-tab:last-child  { border-radius: 0 6px 6px 0; }
+
+        #view-container {
+            background: var(--bg-card); padding: 1rem; border-radius: var(--radius);
+            border: 1px solid var(--border); min-height: 400px; overflow: auto;
+        }
+
+        .now-playing {
+            font-family: 'SF Mono', Menlo, monospace; font-size: 0.8rem;
+            color: var(--text-dim); padding: 0.5rem 1rem; background: var(--bg-input);
+            border-radius: 6px; min-height: 1.4rem;
+        }
+
+        /* Heatmap */
+        table.cons-heatmap {
+            border-collapse: collapse; width: 100%;
+            font-size: 0.82rem;
+        }
+        table.cons-heatmap th, table.cons-heatmap td {
+            padding: 0.5rem 0.6rem; text-align: center; border: 1px solid var(--bg);
+        }
+        table.cons-heatmap th {
+            background: var(--bg-input); color: var(--text); position: sticky; top: 0;
+            font-weight: 600;
+        }
+        table.cons-heatmap td.chord-name {
+            background: var(--bg-input); text-align: left; font-weight: 600;
+            white-space: nowrap; padding-right: 1rem;
+        }
+        td.chord-name.qmaj { border-left: 3px solid #e9833b; }
+        td.chord-name.qmin { border-left: 3px solid #7b6ad9; }
+        td.hm-cell { color: rgba(255,255,255,0.95); cursor: pointer; font-weight: 600; }
+        td.hm-cell:hover { outline: 2px solid white; outline-offset: -2px; }
+
+        /* Bars */
+        .bars-header { margin-bottom: 0.8rem; color: var(--text-dim); }
+        .bars-list { display: flex; flex-direction: column; gap: 0.35rem; }
+        .bar-row {
+            display: grid; grid-template-columns: 130px 1fr 90px;
+            align-items: center; gap: 0.8rem; cursor: pointer;
+            padding: 0.2rem 0.4rem; border-radius: 4px;
+        }
+        .bar-row:hover { background: var(--bg-input); }
+        .bar-label { font-weight: 600; padding-left: 0.5rem; }
+        .bar-label.qmaj { border-left: 3px solid #e9833b; }
+        .bar-label.qmin { border-left: 3px solid #7b6ad9; }
+        .bar-track {
+            height: 22px; background: var(--bg-input); border-radius: 3px; overflow: hidden;
+        }
+        .bar-fill { height: 100%; transition: width 0.3s; }
+        .bar-value {
+            font-family: 'SF Mono', Menlo, monospace; font-size: 0.85rem;
+            color: var(--text-dim); text-align: right;
+        }
+
+        .chord-legend { display: flex; gap: 1.5rem; font-size: 0.8rem; color: var(--text-dim); }
+        .chord-legend span::before {
+            content: ''; display: inline-block; width: 10px; height: 10px;
+            border-radius: 2px; margin-right: 0.4rem; vertical-align: middle;
+        }
+        .chord-legend .leg-maj::before { background: #e9833b; }
+        .chord-legend .leg-min::before { background: #7b6ad9; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">&#127925; Ranking de <span>Consonancia</span></div>
+    <div class="controls" style="margin-left:auto">
+        <a href="index.html" style="color: var(--text-dim); text-decoration: none; font-size: 0.85rem;">&larr; Explorador de Afinaciones</a>
+    </div>
+</header>
+
+<main class="cons-main">
+
+    <div class="intro-card">
+        <h2>Que hace esta herramienta</h2>
+        <p>Rankea la <strong>consonancia</strong> de un set de 24 acordes extendidos (12 mayores + 12 menores) en siete <strong>afinaciones historicas</strong> distintas, usando cuatro metricas complementarias. El objetivo es ayudar a explorar como cada temperamento favorece o penaliza determinados acordes y tonalidades.</p>
+
+        <details>
+            <summary>Como estan construidos los acordes</summary>
+            <p>Cada acorde del set es una <em>septima con triada superpuesta</em>, siguiendo el esquema:</p>
+            <ul style="margin: 0.4rem 0 0.4rem 1.5rem;">
+                <li><strong>Acordes mayores — X13(#11):</strong> tetrada inferior <code>1 — 3 — 5 — b7</code> (septima dominante) + triada mayor superpuesta que aporta <code>9 — #11 — 13</code>. Sonido tipico Lidio-dominante.</li>
+                <li><strong>Acordes menores — Xm13:</strong> tetrada inferior <code>1 — b3 — 5 — b7</code> (menor con septima) + triada menor superpuesta que aporta <code>9 — 11 — 13</code>.</li>
+            </ul>
+            <p style="margin-top: 0.5rem;">Por defecto la tetrada inferior se coloca en la octava 3 y la triada superior queda en la octava 4 por construccion de los intervalos. La octava raiz se puede ajustar.</p>
+        </details>
+
+        <details>
+            <summary>Como usar la pagina</summary>
+            <ul style="margin: 0.4rem 0 0 1.5rem;">
+                <li><strong>Heatmap:</strong> matriz 24 × 7. Filas = acordes, columnas = afinaciones. Verde = mas consonante, rojo = mas disonante (normalizado dentro de la metrica seleccionada).</li>
+                <li><strong>Ranking:</strong> para una afinacion elegida, los 24 acordes ordenados del mas consonante al mas disonante.</li>
+                <li><strong>Click</strong> en cualquier celda o barra para escuchar ese acorde sintetizado con la afinacion exacta.</li>
+                <li>Cambiar de metrica recalcula toda la matriz; cada una ilumina un aspecto distinto de la consonancia (ver detalles de cada una mas abajo).</li>
+            </ul>
+        </details>
+    </div>
+
+    <div class="cons-controls">
+        <div class="control-group">
+            <label for="metric-select">Metrica</label>
+            <select id="metric-select"></select>
+        </div>
+
+        <div class="view-tabs">
+            <button class="view-tab active" data-view="heatmap">Heatmap</button>
+            <button class="view-tab" data-view="bars">Ranking</button>
+        </div>
+
+        <div class="control-group" id="tuning-select-wrap">
+            <label for="tuning-select">Afinacion (ranking)</label>
+            <select id="tuning-select"></select>
+        </div>
+
+        <div class="control-group">
+            <label for="timbre-select">Timbre</label>
+            <select id="timbre-select"></select>
+        </div>
+
+        <div class="control-group">
+            <label for="octave-input">Octava raiz</label>
+            <input type="number" id="octave-input" min="1" max="5" value="3" style="width: 60px">
+        </div>
+
+        <div class="chord-legend" style="margin-left:auto">
+            <span class="leg-maj">Mayor 13(#11)</span>
+            <span class="leg-min">Menor 13</span>
+        </div>
+    </div>
+
+    <div class="metric-desc">
+        <div id="metric-short"></div>
+        <button id="metric-expand-toggle" type="button">Ver detalles de la metrica ▼</button>
+        <div id="metric-long"></div>
+    </div>
+
+    <div id="view-container"></div>
+
+    <div id="now-playing" class="now-playing">Click en una celda o barra para escuchar el acorde...</div>
+
+</main>
+
+<script src="js/tunings.js"></script>
+<script src="js/player.js"></script>
+<script src="js/consonance.js"></script>
+
+</body>
+</html>
