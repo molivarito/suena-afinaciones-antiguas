@@ -431,6 +431,68 @@ input[type="range"]::-webkit-slider-thumb {
     max-width: 100%;
 }
 
+/* Engraved score (Verovio): black-on-cream paper look */
+.engraved-score {
+    background: #faf7ee;
+    border-radius: 6px;
+    padding: 0.5rem 0.8rem;
+    overflow-x: auto;
+}
+.engraved-score svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Upload button */
+.upload-btn {
+    display: inline-block;
+    font-size: 0.8rem;
+    background: var(--bg-input);
+    color: var(--text);
+    border: 1px dashed var(--border);
+    border-radius: 6px;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: border-color 0.15s, background 0.15s;
+}
+.upload-btn:hover {
+    border-color: var(--accent2);
+    background: var(--bg-card-hover);
+}
+
+/* User library item delete button */
+.library-item-del {
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.library-item-del:hover {
+    color: var(--negative);
+    border-color: var(--negative);
+}
+
+/* Secondary button (save to library) */
+.btn-secondary {
+    background: var(--bg-input);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+.btn-secondary:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--accent2);
+}
+
 /* === FOOTER === */
 footer {
     text-align: center;

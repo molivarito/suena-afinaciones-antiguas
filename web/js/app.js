@@ -5,13 +5,16 @@
 let player;
 let currentTuning;
 let currentlyPlayingBtn = null;
-let loadedScore = null;       // { kernData, events, metadata, tempo }
+let loadedScore = null;       // { events, metadata, tempo, sourceKind, raw }
 let scoreIndex = null;
+let scoreRenderer = null;
 
 document.addEventListener('DOMContentLoaded', () => {
     player = new AudioPlayer();
+    window.player = player;
     currentTuning = TUNING_SYSTEMS[0];
     player.setTuning(currentTuning);
+    scoreRenderer = new ScoreRenderer();
 
     initTuningSelector();
     initTimbreSelector();
@@ -20,12 +23,110 @@ document.addEventListener('DOMContentLoaded', () => {
     initKeyboard();
     initTabs();
     initScoreControls();
+    initFileUpload();
     loadLibrary();
     updateUI();
 });
 
-// === PIANO ROLL VISUALIZER ===
-function renderScore(events, metadata) {
+// === SCORE FORMAT DETECTION ===
+function detectFormat(filename) {
+    const ext = (filename || '').toLowerCase().split('.').pop();
+    if (ext === 'krn') return 'kern';
+    if (ext === 'xml' || ext === 'musicxml') return 'musicxml';
+    if (ext === 'mxl') return 'mxl';
+    if (ext === 'mei') return 'mei';
+    if (ext === 'mid' || ext === 'midi') return 'midi';
+    if (ext === 'abc') return 'abc';
+    return 'unknown';
+}
+
+// === UNIFIED SCORE LOAD PIPELINE ===
+// Takes raw content (string or ArrayBuffer for binary), renders with Verovio
+// where possible and extracts audio events via Verovio's renderToMIDI().
+// MIDI files go through the MIDI parser directly and fall back to piano-roll.
+async function loadScoreFromContent(content, filename) {
+    const format = detectFormat(filename);
+    const scoreInfo = document.getElementById('score-info');
+    const controls = document.getElementById('score-controls');
+    const saveBtn = document.getElementById('btn-save-score');
+    scoreInfo.textContent = 'Cargando...';
+    controls.style.display = 'block';
+    if (saveBtn) saveBtn.style.display = 'none';
+
+    try {
+        let events, sourceTempo, metadata, rawForSave;
+
+        if (format === 'midi') {
+            // Direct MIDI parse; piano-roll fallback for visuals.
+            const bytes = content instanceof ArrayBuffer ? new Uint8Array(content) : content;
+            const parsed = parseMIDIBytes(bytes);
+            events = parsed.events;
+            sourceTempo = parsed.sourceTempo;
+            metadata = { title: filename.replace(/\.[^.]+$/, ''), format: 'MIDI' };
+            renderPianoRoll(events, metadata);
+            rawForSave = bytes;
+        } else if (format === 'mxl') {
+            const bytes = content instanceof ArrayBuffer ? new Uint8Array(content) : content;
+            let bin = '';
+            for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+            await scoreRenderer.loadZipBase64(btoa(bin));
+            renderSVG(await scoreRenderer.renderAllPagesSVG());
+            const parsed = parseMIDIBase64(await scoreRenderer.renderToMIDI());
+            events = parsed.events;
+            sourceTempo = parsed.sourceTempo;
+            const meta = await scoreRenderer.getMetadata();
+            metadata = { title: meta.title || filename.replace(/\.[^.]+$/, ''), composer: meta.composer, format: 'MusicXML' };
+            rawForSave = bytes;
+        } else if (format === 'kern' || format === 'musicxml' || format === 'mei' || format === 'abc') {
+            const text = typeof content === 'string' ? content : new TextDecoder().decode(content);
+            await scoreRenderer.loadText(text, format);
+            renderSVG(await scoreRenderer.renderAllPagesSVG());
+            const parsed = parseMIDIBase64(await scoreRenderer.renderToMIDI());
+            events = parsed.events;
+            sourceTempo = parsed.sourceTempo;
+            const meta = await scoreRenderer.getMetadata();
+            metadata = { title: meta.title || filename.replace(/\.[^.]+$/, ''), composer: meta.composer, format: format };
+            rawForSave = text;
+        } else {
+            throw new Error('Formato no soportado: .' + filename.split('.').pop());
+        }
+
+        loadedScore = { events, metadata, tempo: sourceTempo, filename, raw: rawForSave, format };
+        window.loadedScore = loadedScore;
+
+        // Update UI
+        const titleParts = [];
+        if (metadata.title) titleParts.push(metadata.title);
+        if (metadata.composer) titleParts.push(metadata.composer);
+        scoreInfo.textContent = titleParts.join(' — ') || filename;
+        scoreInfo.title = scoreInfo.textContent;
+
+        // Update tempo slider to source tempo
+        const slider = document.getElementById('tempo-slider');
+        slider.value = Math.round(sourceTempo || 100);
+        document.getElementById('tempo-value').textContent = slider.value;
+
+        switchTab('tab-score');
+
+        return true;
+    } catch (e) {
+        console.error('Error loading score:', e);
+        scoreInfo.textContent = 'Error al cargar: ' + e.message;
+        document.getElementById('score-placeholder').style.display = '';
+        document.getElementById('score-container').innerHTML = '';
+        return false;
+    }
+}
+
+function renderSVG(svg) {
+    const container = document.getElementById('score-container');
+    const placeholder = document.getElementById('score-placeholder');
+    placeholder.style.display = 'none';
+    container.innerHTML = `<div class="engraved-score">${svg}</div>`;
+}
+
+// === PIANO ROLL FALLBACK (used for MIDI files) ===
+function renderPianoRoll(events, metadata) {
     const container = document.getElementById('score-container');
     const placeholder = document.getElementById('score-placeholder');
     placeholder.style.display = 'none';
@@ -134,7 +235,6 @@ function renderScore(events, metadata) {
     }
 
     container.appendChild(canvas);
-    switchTab('tab-score');
 }
 
 // === TUNING SELECTOR ===
@@ -201,6 +301,7 @@ async function loadLibrary() {
         catSelect.addEventListener('change', () => renderLibraryList());
         document.getElementById('library-search').addEventListener('input', () => renderLibraryList());
 
+        await populateUserLibraryCategory();
         renderLibraryList();
     } catch (e) {
         document.getElementById('library-list').innerHTML =
@@ -212,6 +313,11 @@ function renderLibraryList() {
     const list = document.getElementById('library-list');
     const cat = document.getElementById('library-category').value;
     const search = document.getElementById('library-search').value.toLowerCase();
+
+    if (cat === 'Mis Partituras') {
+        renderUserLibraryList();
+        return;
+    }
 
     if (!scoreIndex || !scoreIndex[cat]) {
         list.innerHTML = '<p style="color:var(--text-dim);">Sin partituras.</p>';
@@ -250,48 +356,124 @@ function renderLibraryList() {
 }
 
 async function loadScoreFile(category, filename, clickedBtn) {
+    document.querySelectorAll('.library-item').forEach(item => item.classList.remove('active'));
+    if (clickedBtn) clickedBtn.classList.add('active');
+
+    if (category === 'Mis Partituras') {
+        const entry = await UserLibrary.get(filename);
+        if (!entry) return;
+        await loadScoreFromContent(entry.content, entry.name);
+        return;
+    }
+
     const path = `scores/${category}/${filename}`;
-    const scoreInfo = document.getElementById('score-info');
-    const controls = document.getElementById('score-controls');
-
-    scoreInfo.textContent = 'Cargando...';
-    controls.style.display = 'block';
-
     try {
         const resp = await fetch(path);
-        const kernData = await resp.text();
-
-        const parsed = KernParser.parse(kernData);
-        loadedScore = {
-            kernData: kernData,
-            events: parsed.events,
-            metadata: parsed.metadata,
-            tempo: parsed.tempo,
-            filename: filename
-        };
-
-        // Update UI
-        const title = parsed.metadata.title || filename.replace('.krn', '');
-        const catalog = parsed.metadata.catalog || '';
-        scoreInfo.textContent = catalog ? `${title} (${catalog})` : title;
-        scoreInfo.title = scoreInfo.textContent;
-
-        // Update tempo slider to score's tempo
-        const slider = document.getElementById('tempo-slider');
-        slider.value = parsed.tempo || 100;
-        document.getElementById('tempo-value').textContent = slider.value;
-
-        // Render piano roll visualization
-        renderScore(parsed.events, parsed.metadata);
-
-        // Highlight active item
-        document.querySelectorAll('.library-item').forEach(item => item.classList.remove('active'));
-        if (clickedBtn) clickedBtn.classList.add('active');
-
+        const format = detectFormat(filename);
+        const content = (format === 'midi' || format === 'mxl')
+            ? await resp.arrayBuffer()
+            : await resp.text();
+        await loadScoreFromContent(content, filename);
     } catch (e) {
-        scoreInfo.textContent = 'Error al cargar';
-        console.error('Error loading score:', e);
+        document.getElementById('score-info').textContent = 'Error al cargar';
+        console.error(e);
     }
+}
+
+// === FILE UPLOAD ===
+function initFileUpload() {
+    const input = document.getElementById('file-upload');
+    input.addEventListener('change', async () => {
+        const file = input.files[0];
+        if (!file) return;
+        const format = detectFormat(file.name);
+        let content;
+        if (format === 'midi' || format === 'mxl') {
+            content = await file.arrayBuffer();
+        } else {
+            content = await file.text();
+        }
+        const ok = await loadScoreFromContent(content, file.name);
+        if (ok) {
+            const saveBtn = document.getElementById('btn-save-score');
+            saveBtn.style.display = '';
+        }
+        input.value = ''; // permitir volver a subir mismo archivo
+    });
+}
+
+// === USER LIBRARY ===
+async function saveCurrentScoreToLibrary() {
+    if (!loadedScore) return;
+    const name = loadedScore.filename;
+    const id = `user-${Date.now()}-${name}`;
+    await UserLibrary.add({
+        id,
+        name,
+        format: loadedScore.format,
+        content: loadedScore.raw,
+        addedAt: Date.now(),
+    });
+    document.getElementById('btn-save-score').style.display = 'none';
+
+    // Refresh category options + list
+    await populateUserLibraryCategory();
+    const catSelect = document.getElementById('library-category');
+    catSelect.value = 'Mis Partituras';
+    renderLibraryList();
+}
+
+async function populateUserLibraryCategory() {
+    const catSelect = document.getElementById('library-category');
+    const entries = await UserLibrary.list();
+    const optId = 'opt-user-library';
+    let existing = document.getElementById(optId);
+    if (entries.length === 0) {
+        if (existing) existing.remove();
+        return;
+    }
+    if (!existing) {
+        existing = document.createElement('option');
+        existing.id = optId;
+        existing.value = 'Mis Partituras';
+        catSelect.insertBefore(existing, catSelect.firstChild);
+    }
+    existing.textContent = `Mis Partituras (${entries.length})`;
+}
+
+async function renderUserLibraryList() {
+    const list = document.getElementById('library-list');
+    const search = document.getElementById('library-search').value.toLowerCase();
+    const entries = await UserLibrary.list();
+    const filtered = search ? entries.filter(e => e.name.toLowerCase().includes(search)) : entries;
+    if (filtered.length === 0) {
+        list.innerHTML = '<p style="color:var(--text-dim); font-size:0.8rem; padding:0.5rem;">Usa "Cargar archivo..." para agregar partituras propias.</p>';
+        return;
+    }
+    list.innerHTML = '';
+    filtered.forEach(entry => {
+        const row = document.createElement('div');
+        row.style.cssText = 'display:flex; gap:0.3rem; align-items:stretch;';
+        const btn = document.createElement('button');
+        btn.className = 'library-item';
+        btn.style.flex = '1';
+        btn.textContent = entry.name;
+        btn.title = `${entry.name} (${entry.format || '?'})`;
+        btn.addEventListener('click', () => loadScoreFile('Mis Partituras', entry.id, btn));
+        const delBtn = document.createElement('button');
+        delBtn.className = 'library-item-del';
+        delBtn.innerHTML = '&times;';
+        delBtn.title = 'Eliminar';
+        delBtn.addEventListener('click', async (e) => {
+            e.stopPropagation();
+            await UserLibrary.remove(entry.id);
+            await populateUserLibraryCategory();
+            renderLibraryList();
+        });
+        row.appendChild(btn);
+        row.appendChild(delBtn);
+        list.appendChild(row);
+    });
 }
 
 // === SCORE CONTROLS ===
@@ -302,6 +484,7 @@ function initScoreControls() {
         clearPlayingState();
         document.getElementById('btn-play-score').textContent = '\u25B6 Reproducir';
     });
+    document.getElementById('btn-save-score').addEventListener('click', saveCurrentScoreToLibrary);
 }
 
 async function playLoadedScore() {

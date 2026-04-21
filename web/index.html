@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127926;</text></svg>">
-    <!-- No external dependencies needed -->
+    <!-- Verovio: engraved score rendering (kern, MusicXML, MEI, ABC) -->
+    <script src="https://www.verovio.org/javascript/latest/verovio-toolkit-hum.js" defer></script>
 </head>
 <body>
 
@@ -27,6 +28,9 @@
             <label for="tempo-slider">Tempo</label>
             <input type="range" id="tempo-slider" min="30" max="240" value="100" style="width:100px">
             <span id="tempo-value" style="font-size:0.8rem; min-width:3rem">100</span>
+        </div>
+        <div class="control-group" style="margin-left:auto">
+            <a href="consonance.html" style="color:var(--text-dim); text-decoration:none; font-size:0.85rem;">Ranking de Consonancia &rarr;</a>
         </div>
     </div>
 </header>
@@ -104,12 +108,25 @@
             <div id="library-list" style="max-height: 180px; overflow-y: auto;">
                 <p style="color: var(--text-dim); font-size: 0.8rem; padding: 0.5rem;">Cargando biblioteca...</p>
             </div>
+
+            <!-- Upload controls -->
+            <div style="margin-top: 0.6rem; padding-top: 0.6rem; border-top: 1px solid var(--border);">
+                <label for="file-upload" class="upload-btn" title="Acepta .krn, .xml, .musicxml, .mxl, .mei, .mid, .abc">
+                    &#128194; Cargar archivo...
+                </label>
+                <input type="file" id="file-upload" accept=".krn,.xml,.musicxml,.mxl,.mei,.mid,.midi,.abc" style="display:none">
+                <p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.35rem;">
+                    Formatos: kern, MusicXML, MEI, MIDI, ABC
+                </p>
+            </div>
+
             <!-- Playback controls for loaded score -->
             <div id="score-controls" style="display: none; margin-top: 0.6rem; padding-top: 0.6rem; border-top: 1px solid var(--border);">
                 <div id="score-info" style="font-size: 0.8rem; font-weight: 600; margin-bottom: 0.4rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"></div>
-                <div style="display: flex; gap: 0.5rem;">
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                     <button class="btn-primary" id="btn-play-score">&#9654; Reproducir</button>
                     <button class="btn-stop" id="btn-stop-score">&#9632; Detener</button>
+                    <button class="btn-secondary" id="btn-save-score" style="display:none">&#128190; Guardar</button>
                 </div>
             </div>
         </div>
@@ -131,11 +148,15 @@
 </footer>
 
 <!-- Scripts (order matters) -->
-<script src="js/tunings.js"></script>
-<script src="js/player.js"></script>
-<script src="js/kern-parser.js"></script>
-<script src="js/examples.js"></script>
-<script src="js/app.js"></script>
+<script src="js/tunings.js?v=9"></script>
+<script src="js/soundfont.js?v=9"></script>
+<script src="js/player.js?v=9"></script>
+<script src="js/kern-parser.js?v=9"></script>
+<script src="js/midi-parser.js?v=9"></script>
+<script src="js/score-renderer.js?v=9"></script>
+<script src="js/user-library.js?v=9"></script>
+<script src="js/examples.js?v=9"></script>
+<script src="js/app.js?v=9"></script>
 
 </body>
 </html>
