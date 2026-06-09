@@ -169,6 +169,7 @@
                 <li><strong>Ranking:</strong> para una afinacion elegida, los 24 acordes ordenados del mas consonante al mas disonante.</li>
                 <li><strong>Click</strong> en cualquier celda o barra para escuchar ese acorde sintetizado con la afinacion exacta.</li>
                 <li>Cambiar de metrica recalcula toda la matriz; cada una ilumina un aspecto distinto de la consonancia (ver detalles de cada una mas abajo).</li>
+                <li><strong>Centro del temperamento:</strong> por defecto los temperamentos historicos se anclan en <code>Do</code> (la tonalidad "pura"). Cambiarlo a <code>Re</code> rota el patron para centrarlo en Re — util para instrumentos afinados naturalmente en Re, como los traversos barrocos. El diapason (La&nbsp;=&nbsp;440) no cambia; solo se desplaza que tonalidades quedan mas puras.</li>
             </ul>
         </details>
     </div>
@@ -199,6 +200,14 @@
             <input type="number" id="octave-input" min="1" max="5" value="3" style="width: 60px">
         </div>
 
+        <div class="control-group">
+            <label for="ref-root-select" title="Transpone el centro del temperamento. La=440 se mantiene como diapason; solo se rota el patron de quintas puras/temperadas. Util para instrumentos afinados en Re como los traversos barrocos.">Centro del temperamento</label>
+            <select id="ref-root-select">
+                <option value="0">Do (estandar)</option>
+                <option value="2">Re (traversos)</option>
+            </select>
+        </div>
+
         <div class="chord-legend" style="margin-left:auto">
             <span class="leg-maj">Mayor 13(#11)</span>
             <span class="leg-min">Menor 13</span>
@@ -217,10 +226,10 @@
 
 </main>
 
-<script src="js/tunings.js"></script>
-<script src="js/soundfont.js"></script>
-<script src="js/player.js"></script>
-<script src="js/consonance.js"></script>
+<script src="js/tunings.js?v=10"></script>
+<script src="js/soundfont.js?v=10"></script>
+<script src="js/player.js?v=10"></script>
+<script src="js/consonance.js?v=10"></script>
 
 </body>
 </html>

@@ -208,7 +208,9 @@ function renderPianoRoll(events, metadata) {
             const hue = (noteIdx * 30) % 360;
             ctx.fillStyle = `hsl(${hue}, 65%, 55%)`;
             ctx.beginPath();
-            ctx.roundRect(x, y, w, h, 2);
+            // ctx.roundRect no existe en Safari < 16: caer a rect rectangular.
+            if (ctx.roundRect) ctx.roundRect(x, y, w, h, 2);
+            else ctx.rect(x, y, w, h);
             ctx.fill();
 
             // Slight glow
@@ -500,7 +502,7 @@ async function playLoadedScore() {
 
     player.stop();
     clearPlayingState();
-    btn.textContent = '\u23F8 Pausar';
+    btn.textContent = '\u23F9 Detener';
 
     await player.playSequence(loadedScore.events, getCurrentTempo());
 
@@ -549,6 +551,10 @@ async function playExample(example, btn) {
 function clearPlayingState() {
     document.querySelectorAll('.example-btn.playing').forEach(b => b.classList.remove('playing'));
     currentlyPlayingBtn = null;
+    // Resetea tambien el boton de partitura para que no quede colgado en "Detener"
+    // si la reproduccion se interrumpe por un cambio de afinacion u otra accion.
+    const playBtn = document.getElementById('btn-play-score');
+    if (playBtn) playBtn.textContent = '▶ Reproducir';
 }
 
 // === INTERACTIVE KEYBOARD ===
@@ -620,7 +626,11 @@ function updateKeyboard() {
             centsLabel.style.color = '';
         } else {
             centsLabel.textContent = (dev > 0 ? '+' : '') + dev.toFixed(1);
-            if (!key.classList.contains('black')) {
+            // Las teclas negras tienen fondo oscuro: usar variantes mas brillantes
+            // para que el signo de la desviacion sea legible en ambas.
+            if (key.classList.contains('black')) {
+                centsLabel.style.color = dev > 0 ? '#4ec96a' : '#ff6b6b';
+            } else {
                 centsLabel.style.color = dev > 0 ? '#22863a' : '#cb2431';
             }
         }

@@ -172,7 +172,7 @@ class AudioPlayer {
                 const dur = ev.duration * beatDuration;
                 for (const midi of ev.notes) {
                     const n = this._playNote(midi, dur, at, ev.velocity || 0.7);
-                    if (n) activeNodes.push(n);
+                    if (n) { n._end = at + dur + 0.5; activeNodes.push(n); }
                 }
                 nextIdx++;
             }
@@ -184,7 +184,14 @@ class AudioPlayer {
                     this.isPlaying = false;
                     return resolve();
                 }
-                scheduleUpTo(this.ctx.currentTime + LOOKAHEAD_SEC);
+                const now = this.ctx.currentTime;
+                // Purga nodos ya terminados para acotar la lista en partituras largas.
+                for (let i = activeNodes.length - 1; i >= 0; i--) {
+                    if (activeNodes[i]._end !== undefined && activeNodes[i]._end < now) {
+                        activeNodes.splice(i, 1);
+                    }
+                }
+                scheduleUpTo(now + LOOKAHEAD_SEC);
                 if (nextIdx >= events.length) {
                     const remainingMs = Math.max(100, (totalEnd - this.ctx.currentTime + 0.5) * 1000);
                     this._endTimer = setTimeout(() => {

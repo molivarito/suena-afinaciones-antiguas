@@ -58,6 +58,33 @@ class TuningSystem {
     getDeviationsFromET() {
         return this.cents.map((c, i) => c - i * 100);
     }
+
+    /**
+     * Devuelve una vista de esta afinacion con el centro del temperamento
+     * transpuesto a otra clase de altura. Los temperamentos historicos se
+     * construyen anclados en Do (la cadena de quintas arranca ahi, y Do es la
+     * tonalidad "pura"); rotando el patron se puede centrar p.ej. en Re, util
+     * para instrumentos afinados naturalmente en Re como los traversos barrocos.
+     *
+     * Se mantiene La = baseFreq como referencia ABSOLUTA de altura: solo se rota
+     * el patron de temperamento, no el diapason.
+     *
+     * @param {number} rootPc - clase de altura del nuevo centro (0 = Do, 2 = Re).
+     */
+    withRoot(rootPc) {
+        rootPc = ((rootPc % 12) + 12) % 12;
+        if (rootPc === 0) return this;
+        // cents del nuevo centro medido desde Do en el patron original
+        const ref = this.cents[((-rootPc) % 12 + 12) % 12];
+        const view = Object.create(Object.getPrototypeOf(this));
+        Object.assign(view, this);
+        view.cents = this.cents.map((_, pc) => {
+            const v = this.cents[((pc - rootPc) % 12 + 12) % 12] - ref;
+            return ((v % 1200) + 1200) % 1200;
+        });
+        view.rootPc = rootPc;
+        return view;
+    }
 }
 
 // === IMPLEMENTACIONES ===

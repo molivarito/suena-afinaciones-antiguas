@@ -27,6 +27,9 @@ const FUND_PCS = [
     {pc: 11, name: 'B'},
 ];
 
+// Nombres de los centros de temperamento disponibles (clase de altura -> etiqueta).
+const REF_ROOT_NAMES = { 0: 'Do', 2: 'Re' };
+
 function buildChordSet(rootOctave) {
     const chords = [];
     const baseMidi = 12 * (rootOctave + 1); // C0 = MIDI 12 en convencion 69=A4
@@ -53,27 +56,11 @@ function buildChordSet(rootOctave) {
 
 // === UTILIDADES MATEMATICAS ===
 
-/**
- * Aproximacion racional por fracciones continuas (convergente con denom <= maxDenom).
- */
-function nearestRational(x, maxDenom = 99) {
-    if (x <= 0) return [0, 1];
-    let h0 = 0, h1 = 1, k0 = 1, k1 = 0;
-    let v = x;
-    for (let iter = 0; iter < 40; iter++) {
-        const a = Math.floor(v);
-        const h2 = a * h1 + h0;
-        const k2 = a * k1 + k0;
-        if (k2 > maxDenom) break;
-        h0 = h1; h1 = h2; k0 = k1; k1 = k2;
-        const frac = v - a;
-        if (frac < 1e-12) break;
-        v = 1 / frac;
-    }
-    return [h1, k1];
+/** Intervalo en cents entre dos frecuencias, reducido a la octava [0, 1200). */
+function intervalCents(f1, f2) {
+    const c = 1200 * Math.log2(f2 / f1);
+    return ((c % 1200) + 1200) % 1200;
 }
-
-function gcd(a, b) { return b === 0 ? a : gcd(b, a % b); }
 
 /** Π(n): gradus suavitatis de Euler sobre un entero positivo. */
 function eulerGradusOfInt(n) {
@@ -117,19 +104,17 @@ function roughnessSethares(freqs, nHarmonics = 6) {
 
 /**
  * Altura de Tenney promedio sobre todos los intervalos por pares.
- * Cada ratio se reduce a [1, 2) y se aproxima como p/q; altura = log2(p*q).
+ * Cada intervalo se identifica con el ratio justo de 5-limite mas cercano del
+ * catalogo (ver nearestJust); altura = log2(p*q). Usar un catalogo fijo en vez
+ * de fracciones continuas evita la inestabilidad numerica (un intervalo de 400c
+ * podia caer en 63/50 y otro de 700c en 3/2, dando saltos erraticos).
  */
 function tenneyHeight(freqs) {
     let sum = 0, n = 0;
     for (let i = 0; i < freqs.length; i++) {
         for (let j = i + 1; j < freqs.length; j++) {
-            let r = freqs[j] / freqs[i];
-            while (r >= 2) r /= 2;
-            while (r < 1)  r *= 2;
-            const [p, q] = nearestRational(r, 99);
-            const g = gcd(p, q);
-            const P = p / g, Q = q / g;
-            sum += Math.log2(P * Q);
+            const [p, q] = nearestJust(intervalCents(freqs[i], freqs[j]));
+            sum += Math.log2(p * q);
             n++;
         }
     }
@@ -137,18 +122,15 @@ function tenneyHeight(freqs) {
 }
 
 /**
- * Gradus suavitatis de Euler promedio sobre ratios por pares.
+ * Gradus suavitatis de Euler promedio sobre ratios por pares, usando el mismo
+ * catalogo de ratios justos que Tenney y la desviacion de justa.
  */
 function eulerGradus(freqs) {
     let sum = 0, n = 0;
     for (let i = 0; i < freqs.length; i++) {
         for (let j = i + 1; j < freqs.length; j++) {
-            let r = freqs[j] / freqs[i];
-            while (r >= 2) r /= 2;
-            while (r < 1)  r *= 2;
-            const [p, q] = nearestRational(r, 99);
-            const g = gcd(p, q);
-            sum += eulerGradusOfInt((p / g) * (q / g));
+            const [p, q] = nearestJust(intervalCents(freqs[i], freqs[j]));
+            sum += eulerGradusOfInt(p * q);
             n++;
         }
     }
@@ -175,6 +157,22 @@ const JI_CENTS = [
     1200 * Math.log2(15/8),
     1200,
 ];
+
+// Ratios p/q correspondientes a cada entrada de JI_CENTS (mismo orden).
+const JI_RATIOS = [
+    [1,1], [16,15], [9,8], [6,5], [5,4], [4,3], [45,32],
+    [3,2], [8,5], [5,3], [9,5], [15,8], [2,1],
+];
+
+/** Ratio justo de 5-limite del catalogo cuyo valor en cents es el mas cercano. */
+function nearestJust(cents) {
+    let best = 0, bestD = Infinity;
+    for (let i = 0; i < JI_CENTS.length; i++) {
+        const d = Math.abs(cents - JI_CENTS[i]);
+        if (d < bestD) { bestD = d; best = i; }
+    }
+    return JI_RATIOS[best];
+}
 
 function justDeviation(freqs) {
     let sum = 0;
@@ -208,7 +206,8 @@ Cuando dos parciales caen dentro de la llamada <em>banda critica</em> del oido (
 
 <p><strong>Como leer el valor:</strong> <em>menor = mas consonante</em>. Depende del registro (frecuencias absolutas) y del numero de parciales elegido.</p>
 
-<p><strong>Que captura bien:</strong> el caracter de las afinaciones historicas, porque desviaciones pequenas en cents mueven parciales dentro/fuera de batidos audibles. <strong>Que captura mal:</strong> consonancia tonal-armonica (no "sabe" que una quinta es mas estable que un tritono si ambos evitan batidos).</p>`,
+<p><strong>Que captura bien:</strong> el caracter de las afinaciones historicas, porque desviaciones pequenas en cents mueven parciales dentro/fuera de batidos audibles. <strong>Que captura mal:</strong> consonancia tonal-armonica (no "sabe" que una quinta es mas estable que un tritono si ambos evitan batidos).</p>
+<p><strong>Aviso:</strong> por depender de las frecuencias absolutas, <em>sus valores no son comparables entre octavas raiz distintas</em>; al cambiar la "Octava raiz" toda la escala de la metrica se desplaza.</p>`,
     },
     tenney: {
         name: 'Altura de Tenney',
@@ -218,7 +217,7 @@ Cuando dos parciales caen dentro de la llamada <em>banda critica</em> del oido (
 <p><strong>James Tenney, <em>John Cage and the Theory of Harmony</em> (1983).</strong>
 La idea clasica pitagorica: una razon simple como 3:2 es mas consonante que una compleja como 45:32.</p>
 
-<p><strong>Como se calcula:</strong> para cada par de notas del acorde se toma la razon de frecuencias, se reduce a la octava [1, 2), se aproxima como fraccion irreducible <code>p/q</code> (fracciones continuas, denominador ≤ 99), y se calcula la <em>altura de Tenney</em>:</p>
+<p><strong>Como se calcula:</strong> para cada par de notas del acorde se toma el intervalo en cents (reducido a la octava), se identifica con el ratio justo de 5-limite mas cercano del catalogo <code>p/q</code>, y se calcula la <em>altura de Tenney</em>:</p>
 <p class="formula">HT(p/q) = log₂(p · q)</p>
 <p>La metrica del acorde es el <strong>promedio</strong> sobre todos los pares. Ejemplos: 2:1 → 1.0, 3:2 → 2.58, 5:4 → 4.32, 45:32 → 10.49.</p>
 
@@ -236,7 +235,7 @@ Euler propuso medir la "suavidad" (<em>suavitas</em>) de una razon segun cuan co
 
 <p><strong>Como se calcula:</strong> para un entero <code>n = p₁<sup>e₁</sup> · p₂<sup>e₂</sup> · ...</code></p>
 <p class="formula">Π(n) = 1 + Σ eᵢ · (pᵢ − 1)</p>
-<p>Para cada par del acorde se toma la razon reducida <code>p/q</code> y se calcula <code>Π(p·q)</code>; la metrica del acorde es el <strong>promedio</strong>. Ejemplos: Π(1)=1, Π(2)=2, Π(3)=3, Π(6)=4, Π(15)=7, Π(45)=10.</p>
+<p>Para cada par del acorde se toma el ratio justo mas cercano del catalogo <code>p/q</code> y se calcula <code>Π(p·q)</code>; la metrica del acorde es el <strong>promedio</strong>. Ejemplos: Π(1)=1, Π(2)=2, Π(3)=3, Π(6)=4, Π(15)=7, Π(45)=10.</p>
 
 <p><strong>Como leer el valor:</strong> <em>menor = mas suave</em>. A diferencia de Tenney, penaliza especialmente los primos grandes (7, 11, 13): una septima septimal 7:4 tiene Π=10 igual que 9:8, pero Tenney las separa (4.81 vs 6.17).</p>
 
@@ -337,7 +336,9 @@ function renderBars(container, chords, tunings, matrix, tuningIdx) {
 
 class ConsonanceApp {
     constructor() {
-        this.tunings = TUNING_SYSTEMS;
+        this.baseTunings = TUNING_SYSTEMS;
+        this.refRoot = 0; // 0 = Do (estandar), 2 = Re (centro del temperamento)
+        this.tunings = this.baseTunings;
         this.player = new AudioPlayer();
         this.rootOctave = 3;
         this.chords = buildChordSet(this.rootOctave);
@@ -346,7 +347,12 @@ class ConsonanceApp {
         this.selectedTuning = 0;
 
         this._bindUI();
+        this._applyRoot();
         this.recompute();
+    }
+
+    _applyRoot() {
+        this.tunings = this.baseTunings.map(t => t.withRoot(this.refRoot));
     }
 
     _bindUI() {
@@ -403,6 +409,16 @@ class ConsonanceApp {
             }
         });
 
+        const refSel = document.getElementById('ref-root-select');
+        if (refSel) {
+            refSel.value = String(this.refRoot);
+            refSel.addEventListener('change', e => {
+                this.refRoot = parseInt(e.target.value);
+                this._applyRoot();
+                this.recompute();
+            });
+        }
+
         for (const btn of document.querySelectorAll('.view-tab')) {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.view-tab').forEach(b => b.classList.remove('active'));
@@ -436,10 +452,16 @@ class ConsonanceApp {
             renderBars(container, this.chords, this.tunings, this.matrix, this.selectedTuning);
         }
         container.querySelectorAll('[data-ci]').forEach(el => {
-            el.addEventListener('click', () => {
+            el.setAttribute('role', 'button');
+            el.setAttribute('tabindex', '0');
+            const trigger = () => {
                 const ci = parseInt(el.dataset.ci);
                 const ti = parseInt(el.dataset.ti);
                 this.playChord(ci, ti);
+            };
+            el.addEventListener('click', trigger);
+            el.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); trigger(); }
             });
         });
     }
@@ -455,8 +477,9 @@ class ConsonanceApp {
             offset: 0,
             velocity: 0.6,
         }];
+        const refTxt = this.refRoot ? `  |  centro: ${REF_ROOT_NAMES[this.refRoot] || this.refRoot}` : '';
         document.getElementById('now-playing').textContent =
-            `${chord.label} en ${tuning.shortName}  |  MIDI: [${chord.notes.join(', ')}]  |  ${METRICS[this.metricKey].name}: ${this.matrix[chordIdx][tuningIdx].toFixed(4)}`;
+            `${chord.label} en ${tuning.shortName}${refTxt}  |  MIDI: [${chord.notes.join(', ')}]  |  ${METRICS[this.metricKey].name}: ${this.matrix[chordIdx][tuningIdx].toFixed(4)}`;
         this.player.playSequence(events, 60);
     }
 }
