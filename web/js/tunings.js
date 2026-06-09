@@ -291,3 +291,8 @@ const TUNING_SYSTEMS = [
 function getTuningById(id) {
     return TUNING_SYSTEMS.find(t => t.id === id);
 }
+
+// Exportacion CommonJS para tests en Node (ignorada por el navegador).
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { TUNING_SYSTEMS, getTuningById, TuningSystem };
+}

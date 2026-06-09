@@ -1,4 +1,5 @@
 # core/tuning_system.py
+import copy
 import numpy as np
 
 class TuningSystem:
@@ -55,6 +56,27 @@ class TuningSystem:
             cents = 1200 * np.log2(ratio)
             cents_table.append(cents)
         return cents_table
+
+    def with_root(self, root_pc):
+        """Devuelve una copia de la afinación con el centro del temperamento
+        transpuesto a otra clase de altura (0=Do, 2=Re), manteniendo La=base_freq
+        como diapasón absoluto. Solo rota el patrón de quintas puras/temperadas,
+        no cambia el tono de referencia. Útil para instrumentos afinados
+        naturalmente en Re, como los traversos barrocos."""
+        root_pc = int(root_pc) % 12
+        if root_pc == 0:
+            return self
+        # cents de cada nota respecto a Do en el patrón original
+        orig = [1200 * np.log2(f / self.pitch_table[0]) for f in self.pitch_table]
+        ref = orig[(-root_pc) % 12]
+        new_cents = [(((orig[(pc - root_pc) % 12] - ref) % 1200) + 1200) % 1200
+                     for pc in range(12)]
+        # Re-anclar La (índice 9) a base_freq, igual que en las subclases
+        c_freq = self.base_freq / (2 ** (new_cents[9] / 1200))
+        view = copy.copy(self)
+        view.pitch_table = [c_freq * (2 ** (c / 1200)) for c in new_cents]
+        view.root_pc = root_pc
+        return view
 
 # --- Implementaciones de Afinaciones ---
 

@@ -95,6 +95,12 @@ class MainWindow(QMainWindow):
         self.add_to_library_button = QPushButton("Añadir a Librería")
         self.library_combo = QComboBox()
         self.tuning_combo = QComboBox()
+        self.root_combo = QComboBox()
+        self.root_combo.addItem("Do", userData=0)
+        self.root_combo.addItem("Re", userData=2)
+        self.root_combo.setToolTip(
+            "Centro del temperamento. Mantiene La=440 como diapasón; solo rota el "
+            "patrón de quintas puras/temperadas. Re es útil para traversos barrocos.")
         self.tempo_slider = QSlider(Qt.Orientation.Horizontal)
         self.tempo_label = QLabel("60 BPM")
         self.instrument_combo = QComboBox()
@@ -108,6 +114,8 @@ class MainWindow(QMainWindow):
         control_panel.addStretch()
         control_panel.addWidget(QLabel("Afinación:"))
         control_panel.addWidget(self.tuning_combo)
+        control_panel.addWidget(QLabel("Centro:"))
+        control_panel.addWidget(self.root_combo)
         control_panel.addWidget(QLabel("Tempo:"))
         control_panel.addWidget(self.tempo_slider)
         control_panel.addWidget(self.tempo_label)
@@ -193,6 +201,7 @@ class MainWindow(QMainWindow):
         self.add_to_library_button.clicked.connect(self.add_to_library)
         self.library_combo.currentIndexChanged.connect(self.load_from_library)
         self.tuning_combo.currentIndexChanged.connect(self.update_tuning)
+        self.root_combo.currentIndexChanged.connect(self.update_root)
         self.tempo_slider.valueChanged.connect(self.update_tempo)
         self.instrument_combo.currentIndexChanged.connect(self.update_instrument)
         self.play_button.clicked.connect(self.play_score)
@@ -243,7 +252,8 @@ class MainWindow(QMainWindow):
 
     def populate_comparison_table(self):
         """Rellena la tabla con los valores en cents de cada afinación."""
-        tunings = [AVAILABLE_TUNINGS[name]() for name in AVAILABLE_TUNINGS.keys()]
+        root_pc = self.root_combo.currentData() or 0
+        tunings = [AVAILABLE_TUNINGS[name]().with_root(root_pc) for name in AVAILABLE_TUNINGS.keys()]
         note_names = ["Do", "Do#", "Re", "Re#", "Mi", "Fa", "Fa#", "Sol", "Sol#", "La", "La#", "Si"]
 
         self.comparison_table.setRowCount(12)
@@ -351,15 +361,25 @@ class MainWindow(QMainWindow):
         tuning_name = self.tuning_combo.currentText()
         TuningClass = AVAILABLE_TUNINGS[tuning_name]
         tuning_system = TuningClass() # Instanciar con valores por defecto
-        
+
+        # Aplicar el centro del temperamento seleccionado (Do/Re)
+        root_pc = self.root_combo.currentData() or 0
+        tuning_system = tuning_system.with_root(root_pc)
+
         self.player.set_tuning(tuning_system)
-        
+
         self.tuning_title.setText(tuning_system.name)
         self.tuning_description.setText(tuning_system.description)
-        
+
         # Si hay reproducción activa, detenerla (el usuario puede volver a reproducir)
         if self.playback_thread and self.playback_thread.isRunning():
             self.stop_score()
+
+    def update_root(self):
+        """Reacciona al cambio de centro del temperamento (Do/Re): reaplica la
+        afinación al reproductor y recalcula la tabla de comparación."""
+        self.update_tuning()
+        self.populate_comparison_table()
 
     def update_instrument(self):
         instrument_name = self.instrument_combo.currentText()

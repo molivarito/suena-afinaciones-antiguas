@@ -4,7 +4,13 @@
 
 let player;
 let currentTuning;
+let currentRefRoot = 0; // 0 = Do (estandar), 2 = Re (centro del temperamento)
 let currentlyPlayingBtn = null;
+
+// Afinacion efectiva: la seleccionada, transpuesta al centro actual.
+function activeTuning() {
+    return currentTuning.withRoot(currentRefRoot);
+}
 let loadedScore = null;       // { events, metadata, tempo, sourceKind, raw }
 let scoreIndex = null;
 let scoreRenderer = null;
@@ -13,10 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
     player = new AudioPlayer();
     window.player = player;
     currentTuning = TUNING_SYSTEMS[0];
-    player.setTuning(currentTuning);
+    player.setTuning(activeTuning());
     scoreRenderer = new ScoreRenderer();
 
     initTuningSelector();
+    initRootSelector();
     initTimbreSelector();
     initTempoSlider();
     initExamples();
@@ -250,7 +257,21 @@ function initTuningSelector() {
     });
     select.addEventListener('change', () => {
         currentTuning = getTuningById(select.value);
-        player.setTuning(currentTuning);
+        player.setTuning(activeTuning());
+        player.stop();
+        clearPlayingState();
+        updateUI();
+    });
+}
+
+// === ROOT (CENTRO DEL TEMPERAMENTO) SELECTOR ===
+function initRootSelector() {
+    const select = document.getElementById('root-select');
+    if (!select) return;
+    select.value = String(currentRefRoot);
+    select.addEventListener('change', () => {
+        currentRefRoot = parseInt(select.value) || 0;
+        player.setTuning(activeTuning());
         player.stop();
         clearPlayingState();
         updateUI();
@@ -614,7 +635,7 @@ function createKey(noteIndex, isBlack) {
 
 function updateKeyboard() {
     const keys = document.querySelectorAll('.key');
-    const devs = currentTuning.getDeviationsFromET();
+    const devs = activeTuning().getDeviationsFromET();
 
     keys.forEach(key => {
         const noteIdx = parseInt(key.dataset.note);
@@ -650,7 +671,8 @@ function updateComparisonTable() {
         tdName.textContent = NOTE_NAMES[i];
         tr.appendChild(tdName);
 
-        TUNING_SYSTEMS.forEach(tuning => {
+        TUNING_SYSTEMS.forEach(baseTuning => {
+            const tuning = baseTuning.withRoot(currentRefRoot);
             const td = document.createElement('td');
             const dev = tuning.cents[i] - i * 100;
             const isActive = tuning.id === currentTuning.id;
